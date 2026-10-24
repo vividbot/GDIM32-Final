@@ -9,10 +9,7 @@ public class PlayerScript : MonoBehaviour
 
 
     [SerializeField] private float moveSpeed = 10.0f; 
-    private Rigidbody controller;
-    [SerializeField] private float mouseSens = 100.0f;
-    public Transform playerBody;
-
+    private Rigidbody controller;   
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,9 +20,7 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         //mouse pointing logic
-        float mouseX = Input.GetAxis("Mouse X") * mouseSens * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSens * Time.deltaTime;
-        playerBody.Rotate(Vector3.up * mouseX);
+
 
 
         // Handle Player movement
