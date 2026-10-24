@@ -24,8 +24,8 @@ public class PlayerScript : MonoBehaviour
 
 
         // Handle Player movement
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+        float x = Input.GetAxis("Vertical");
+        float z = Input.GetAxis("Horizontal");
     
 
         
