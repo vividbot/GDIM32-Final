@@ -30,8 +30,8 @@ public class PlayerScript : MonoBehaviour
         controller.transform.Translate(move * moveSpeed * Time.deltaTime);
         // Debug.Log(forward + "forward");
         // Debug.Log(right + "right");
-        Debug.Log(x + "x");
-        Debug.Log(z + "z");
+        //Debug.Log(x + "x");
+        //Debug.Log(z + "z");
     }
 
 }
