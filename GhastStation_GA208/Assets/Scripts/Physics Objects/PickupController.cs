@@ -3,14 +3,15 @@ using UnityEngine;
 public class PickupController : MonoBehaviour
 {
 
-    //pickup settings
+    [Header("Pick Up Settings")]
     [SerializeField] Transform holdArea;
     private GameObject heldObject;
     private Rigidbody heldObjectRB;
 
-    //physics parameters
+    [Header("Physics Parameters")]
     [SerializeField] private float pickUpRange = 0.5f;
     [SerializeField] private float pickUpForce = 100f;
+    [SerializeField] private float pickUpStiffness = 20f; //higher the number, less bounciness. Lower the number, more bounciness. 
 
     private void Update()
     {
@@ -19,9 +20,9 @@ public class PickupController : MonoBehaviour
             if(heldObject == null) //if there is nothing in our hand:
             {
                 RaycastHit hit;
-                if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, pickUpRange)) //Ray shot out from the front of the player camera with a range of the esablished pickUpRange.
+                if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, pickUpRange)) // out from the front of the player camera with a range of the esablished pickUpRange.
                 {
-                    PickUpObject(hit.transform.gameObject); //finds object found by ray
+                    PickUpObject(hit.transform.gameObject); //Triggers PickUpObject method, GameObject found becomes "pickObject" from said method.
                 }
             }
             else
@@ -39,7 +40,7 @@ public class PickupController : MonoBehaviour
     {
         if(Vector3.Distance(heldObject.transform.position, holdArea.position) > 0.1f)
         {
-            Vector3 moveDirection = (holdArea.position - heldObject.transform.position);
+            Vector3 moveDirection = (holdArea.position - heldObject.transform.position); 
             heldObjectRB.AddForce(moveDirection * pickUpForce);
         }
     }
@@ -50,7 +51,7 @@ public class PickupController : MonoBehaviour
         {
             heldObjectRB = pickObject.GetComponent<Rigidbody>(); //grabs held objects RB
             heldObjectRB.useGravity = false; //prevents held object from falling
-            heldObjectRB.linearDamping = 20; //adds a bit of drag to the object (Set to a lower number for more bouncy and high number for less bouncy)
+            heldObjectRB.linearDamping = pickUpStiffness; //adds a bit of drag to the object 
             heldObjectRB.constraints = RigidbodyConstraints.FreezeRotation; //freezes the rotation of the object.
 
             heldObjectRB.transform.parent = holdArea;
@@ -60,6 +61,8 @@ public class PickupController : MonoBehaviour
 
     void DropObject()
     {
+        //This basically undoes everything PickUpObject does. 
+        //I'd like to add some force to throw the object a bit, especially in regards to the rats, but that might make some puzzles a bit harder...
         heldObjectRB.useGravity = true;
         heldObjectRB.linearDamping = 1; 
         heldObjectRB.constraints = RigidbodyConstraints.None;
@@ -77,4 +80,7 @@ public class PickupController : MonoBehaviour
 
         Gizmos.DrawRay(startingPOint, direction);
     }
+
+    //https://www.youtube.com/watch?v=6bFCQqabfzo Utilized this tutorial, though I edited it every so slightly in terms of organization and some variables, also added the gizmo.
+    //gone thru and added comments explaining what the code does
 }
