@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7254712016328086294}
   - component: {fileID: 976416345315912127}
   - component: {fileID: 3172675707530316746}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,9 +124,9 @@ GameObject:
   - component: {fileID: 8354196592332304674}
   - component: {fileID: 5341867835381836871}
   - component: {fileID: 7828724434132905439}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Quest_Object
-  m_TagString: Untagged
+  m_TagString: QuestItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
