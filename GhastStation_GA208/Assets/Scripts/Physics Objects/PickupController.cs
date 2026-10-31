@@ -31,7 +31,6 @@ public class PickupController : MonoBehaviour
                 if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, pickUpRange, ~IgnoreMe)) // out from the front of the player camera with a range of the esablished pickUpRange.
                 {
                     PickUpObject(hit.transform.gameObject); //Triggers PickUpObject method, GameObject found becomes "pickObject" from said method.
-                    
                 }
             }
             else
@@ -66,6 +65,7 @@ public class PickupController : MonoBehaviour
 
             heldObjectRB.transform.parent = holdArea;
             heldObject = pickObject;
+
         }
     }
 
