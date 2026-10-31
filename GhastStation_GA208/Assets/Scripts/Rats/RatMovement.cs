@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.Splines;
+
 public enum RatStates
 {
     Running,
@@ -12,7 +14,7 @@ public class RatMovement : MonoBehaviour
 
     private Rigidbody ratRB;
 
-    private Component splineAnimator;
+    private SplineAnimate splineAnimator;
 
     /*
     [Header("Rat Game Objects")] 
@@ -25,14 +27,15 @@ public class RatMovement : MonoBehaviour
     private void Start()
     {
         Locator.Instance.PickUp.GrabbedRat += RatGrabbed;
-        //splineAnimator 
+        splineAnimator = GetComponent<SplineAnimate>();
         //ratRB = GetComponent<Rigidbody>();
     }
 
     public void RatGrabbed()
     {
+        Debug.Log("grabbed rat");
         currentState = RatStates.Grabbed;
-        //splineAnimator.enabled = false;
+        splineAnimator.enabled = false;
     }
 
 }
