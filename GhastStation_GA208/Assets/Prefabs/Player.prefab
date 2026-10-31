@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2307615032574565313}
   - component: {fileID: 2505933621265828104}
   - component: {fileID: 7821395783585651461}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 4794714392185278533}
   - component: {fileID: 1960932396422568071}
   - component: {fileID: 8888148547723255501}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ab7aaf4fd8579842840328b825bc4f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  moveSpeed: 500
+  moveSpeed: 8
 --- !u!54 &1960932396422568071
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -227,7 +227,7 @@ GameObject:
   - component: {fileID: 1551739217804744619}
   - component: {fileID: 4422724954293611176}
   - component: {fileID: 7130132187232285164}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -392,7 +392,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5679810705064650201}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Object Hold Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
