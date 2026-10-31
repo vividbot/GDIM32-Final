@@ -7,6 +7,10 @@ public class PickupController : MonoBehaviour
     public delegate void EmptyDelagate();
     public event EmptyDelagate GrabbedRat;
 
+    // layer mask
+
+    public LayerMask IgnoreMe;
+
     [Header("Pick Up Settings")]
     [SerializeField] Transform holdArea;
     private GameObject heldObject;
@@ -24,9 +28,10 @@ public class PickupController : MonoBehaviour
             if(heldObject == null) //if there is nothing in our hand:
             {
                 RaycastHit hit;
-                if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, pickUpRange)) // out from the front of the player camera with a range of the esablished pickUpRange.
+                if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, pickUpRange, ~IgnoreMe)) // out from the front of the player camera with a range of the esablished pickUpRange.
                 {
                     PickUpObject(hit.transform.gameObject); //Triggers PickUpObject method, GameObject found becomes "pickObject" from said method.
+                    Debug.Log("Grabbed Object");
                 }
             }
             else
@@ -44,7 +49,7 @@ public class PickupController : MonoBehaviour
     {
         if(Vector3.Distance(heldObject.transform.position, holdArea.position) > 0.1f)
         {
-            Vector3 moveDirection = (holdArea.position - heldObject.transform.position); 
+            Vector3 moveDirection = (holdArea.position - heldObject.transform.position);
             heldObjectRB.AddForce(moveDirection * pickUpForce);
         }
     }
@@ -53,11 +58,6 @@ public class PickupController : MonoBehaviour
     {
         if(pickObject.GetComponent<Rigidbody>())
         {
-            if(pickObject.CompareTag("Rat"))
-            {
-                GrabbedRat?.Invoke();
-            }
-
             heldObjectRB = pickObject.GetComponent<Rigidbody>(); //grabs held objects RB
             heldObjectRB.useGravity = false; //prevents held object from falling
             heldObjectRB.linearDamping = pickUpStiffness; //adds a bit of drag to the object 
