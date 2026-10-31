@@ -22,6 +22,8 @@ public class RatMovement : MonoBehaviour
     [SerializeField] private GameObject ratInAir;
 
     Saving this just in case I reapproach the double GameObject solution.
+
+    finishing this on Wednesday!!! 
     */
 
     private void Start()
