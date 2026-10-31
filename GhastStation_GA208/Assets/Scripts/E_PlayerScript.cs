@@ -25,7 +25,7 @@ public class PlayerScript : MonoBehaviour
 
 
         
-        controller.Move(move * moveSpeed * Time.deltaTime);
+        controller.SimpleMove(move * moveSpeed * Time.deltaTime);
 
     }
 
