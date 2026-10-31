@@ -10,8 +10,9 @@ public class RatMovement : MonoBehaviour
     //State Machine
     RatStates currentState;
 
-    //script needs to find a way to speak with the pick up script to switch states... Maybe through events?
-    //PickUpController script triggers event, RatMovement listens for it and triggers based on when the player picks up rat or throws/drops it...
+    private Rigidbody ratRB;
+
+    private Component splineAnimator;
 
     /*
     [Header("Rat Game Objects")] 
@@ -23,10 +24,15 @@ public class RatMovement : MonoBehaviour
 
     private void Start()
     {
-
+        Locator.Instance.PickUp.GrabbedRat += RatGrabbed;
+        //splineAnimator 
+        //ratRB = GetComponent<Rigidbody>();
     }
-    private void Update()
+
+    public void RatGrabbed()
     {
-
+        currentState = RatStates.Grabbed;
+        //splineAnimator.enabled = false;
     }
+
 }

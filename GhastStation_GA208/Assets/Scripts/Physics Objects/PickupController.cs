@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class PickupController : MonoBehaviour
 {
+    // Events
+
+    public delegate void EmptyDelagate();
+    public event EmptyDelagate GrabbedRat;
 
     [Header("Pick Up Settings")]
     [SerializeField] Transform holdArea;
@@ -49,6 +53,11 @@ public class PickupController : MonoBehaviour
     {
         if(pickObject.GetComponent<Rigidbody>())
         {
+            if(pickObject.CompareTag("Rat"))
+            {
+                GrabbedRat?.Invoke();
+            }
+
             heldObjectRB = pickObject.GetComponent<Rigidbody>(); //grabs held objects RB
             heldObjectRB.useGravity = false; //prevents held object from falling
             heldObjectRB.linearDamping = pickUpStiffness; //adds a bit of drag to the object 
