@@ -15,7 +15,7 @@ public class PlayerScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         // Handle Player movement
         float x = Input.GetAxis("Horizontal");
@@ -26,12 +26,9 @@ public class PlayerScript : MonoBehaviour
         // Vector3 move = transform.right * x + transform.forward * z;
         Vector3 move = forward + right;
 
+        controller.linearVelocity = move * moveSpeed;
         
-        controller.transform.Translate(move * moveSpeed * Time.deltaTime);
-        // Debug.Log(forward + "forward");
-        // Debug.Log(right + "right");
-        //Debug.Log(x + "x");
-        //Debug.Log(z + "z");
+
     }
 
 }
