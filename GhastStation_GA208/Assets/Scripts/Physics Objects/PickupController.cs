@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class PickupController : MonoBehaviour
 {
+    // Events
+
+    public delegate void EmptyDelagate();
+    public event EmptyDelagate GrabbedRat;
 
     [Header("Pick Up Settings")]
     [SerializeField] Transform holdArea;
@@ -49,10 +53,15 @@ public class PickupController : MonoBehaviour
     {
         if(pickObject.GetComponent<Rigidbody>())
         {
+            if(pickObject.CompareTag("Rat"))
+            {
+                GrabbedRat?.Invoke();
+            }
+
             heldObjectRB = pickObject.GetComponent<Rigidbody>(); //grabs held objects RB
             heldObjectRB.useGravity = false; //prevents held object from falling
             heldObjectRB.linearDamping = pickUpStiffness; //adds a bit of drag to the object 
-            heldObjectRB.constraints = RigidbodyConstraints.FreezeRotation; //freezes the rotation of the object.
+            //heldObjectRB.constraints = RigidbodyConstraints.FreezeRotation; //freezes the rotation of the object.
 
             heldObjectRB.transform.parent = holdArea;
             heldObject = pickObject;
@@ -65,7 +74,7 @@ public class PickupController : MonoBehaviour
         //I'd like to add some force to throw the object a bit, especially in regards to the rats, but that might make some puzzles a bit harder...
         heldObjectRB.useGravity = true;
         heldObjectRB.linearDamping = 1; 
-        heldObjectRB.constraints = RigidbodyConstraints.None;
+        //heldObjectRB.constraints = RigidbodyConstraints.None;
 
         heldObjectRB.transform.parent = null;
         heldObject = null;
