@@ -6,28 +6,26 @@ public class PlayerScript : MonoBehaviour
 
 
     [SerializeField] private float moveSpeed = 10.0f; 
-    private Rigidbody controller;   
+    private CharacterController controller;   
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        controller = GetComponent<Rigidbody>();
+        controller = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         // Handle Player movement
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
-        Vector3 forward = transform.InverseTransformDirection(transform.forward) * z;
-        Vector3 right = transform.InverseTransformDirection(transform.right) * x;
-        // Vector3 move = transform.right * x + transform.forward * z;
-        Vector3 move = forward + right;
+        Vector3 move = transform.right * x + transform.forward * z;
 
-        controller.linearVelocity = move * moveSpeed;
+
         
+        controller.Move(move * moveSpeed * Time.deltaTime);
 
     }
 
