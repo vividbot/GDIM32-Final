@@ -11,7 +11,7 @@ public class E_QuestZone : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -24,15 +24,19 @@ public class E_QuestZone : MonoBehaviour
     {
         if (other.gameObject.CompareTag("QuestItem"))
         {
-            Debug.Log("Item Placed in zone");
+            // Debug.Log("Item Placed in zone");
+            Locator.Instance.QuestObjectScored(1);
+
         }
     }
     void OnTriggerExit(Collider other)
     {
-        // if (other.gameObject.CompareTag("QuestItem"))
-        // {
-        //     Debug.Log("Item Removed From Zone");
-        // } 
-        Debug.Log("Item Removed from Zone");
+        if (other.gameObject.CompareTag("QuestItem"))
+        {
+            // Debug.Log("Item Removed From Zone");
+            Locator.Instance.QuestObjectScored(-1);
+
+        } 
+        // Debug.Log("Item Removed from Zone");
     }
 }
