@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Splines;
 
 public class PickupController : MonoBehaviour
 {
@@ -42,6 +43,11 @@ public class PickupController : MonoBehaviour
         {
             MoveObject();
         }
+
+        if(Input.GetMouseButtonDown(1))
+        {
+            ThrowObject();
+        }
     }
 
     void MoveObject()
@@ -66,6 +72,13 @@ public class PickupController : MonoBehaviour
             heldObjectRB.transform.parent = holdArea;
             heldObject = pickObject;
 
+            if(pickObject.CompareTag("Rat"))
+            {
+                //Debug.Log("grabbed rat");
+                GrabbedRat?.Invoke();
+                pickObject.GetComponent<SplineAnimate>().enabled = false;
+            }
+
         }
     }
 
@@ -89,6 +102,14 @@ public class PickupController : MonoBehaviour
         Vector3 direction = transform.forward * pickUpRange;
 
         Gizmos.DrawRay(startingPOint, direction);
+    }
+
+    void ThrowObject()
+    {
+        //Throwing Logic. Drop object is here for now so it actually does something, will update with actual logic once it's ready.
+        Debug.Log("object thrown");
+        DropObject();
+
     }
 
     //https://www.youtube.com/watch?v=6bFCQqabfzo Utilized this tutorial, though I edited it every so slightly in terms of organization and some variables, also added the gizmo.
