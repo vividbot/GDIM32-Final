@@ -10,10 +10,16 @@ I created the ObjectPickUp and RatMovement Classes for the project. The Trello a
 
 For future games, I will definitely go more in depth with my proposal/plan for each mechanic within them. Having the Proposal readily available for me to reference helped prevent me become stuck on how to approach certain tasks or roadblocks as I worked.
 
-### Team Member Name 2
-Put your individual check-in Devlog here.
-### Team Member Name 3
-Put your individual check-in Devlog here.
+### Sean Elston
+For this stage of the project, I contributed the movement script as well as the script handling the camera movement tied to the players mouse movement. Additionaly I added in the first bit of logic for tracking where objects are in a scene in order to detect when a a player is placing or moving an object in the correct area to trigger the quests that will be built later down the line. 
+
+The movement and mouse look at scripts were fairly simple, both primarily have their code written in the update method with no additional methods being written as it was simple enough to add that code into the update method (However if more code is added the update methods later I may write an individual method for both movement and mouse look at scripts) Movent script takes a float from player input and adds those together, then multiplying that final vector3 by a variable called movespeed, which is exposed in the editor to make adjusting player movement easier, and then being multiplied by time.Deltatime. Similar type of code for the mouse script just geting a float from the x and y Input from the players mouse, instead of applying a transform applying a rotation to the camera as well as a rotation to the player collider so the whole player moves when the mouse turns. 
+
+The Quest Zone Script was more complicated than the previous two, the script is a component of objects that include collider triggers that tell the game when an object is placed inside that zone. It utelizes the OnTriggerEnter code, and then runs an if statement to check to see if the item in the trigger has a specific tag, if so it fires an event to the locator in the scene, which then triggers the UI to update in the UI script attatched to the canvas gameObject, I also wrote a method inside the locator called QuestObjectScored, that the QuestZone script will call when it needs to trigger the event that updates the UI for when a player has moved and object in the scene.
+
+Finally I did the first pass of greybox blockout in the scene getting our level to a state where we can visualize how we are going to be playing in the scene. 
+
+I think our proposal overall was detailed enough as we were able to get a good start planning out what needed to be done based on that proposal. Additionaly trello has been pretty useful for organizing and planning what we need to do. So when I finish a task I can immdeatly move on to the next thing on our list. 
 
 ## Final Submission
 ### Group Devlog
