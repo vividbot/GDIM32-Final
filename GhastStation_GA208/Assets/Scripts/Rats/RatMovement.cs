@@ -21,25 +21,19 @@ public class RatMovement : MonoBehaviour
 
     public void Update()
     {
+        /*
         if (currentState == RatStates.Running)
         {
             GetComponent<SplineAnimate>().enabled = true;
-            //do animator
         }
-
-        if (currentState == RatStates.Thrown)
-        {
-            //do animator
-        }
+        */
     }
 
     public void RatGrabbed()
     {
-        if (currentState != RatStates.Running)
-        {
-            //do animator + ragdoll stuff
-            Debug.Log("grabbed rat");
-        }
+        //Debug.Log("grabbed rat");
+        currentState = RatStates.Grabbed; //somehow, the code needs the state to disable the spline animate component. what.
+        GetComponent<SplineAnimate>().enabled = false;
     }
 
     public void OnCollisionEnter(Collision other)
@@ -49,13 +43,14 @@ public class RatMovement : MonoBehaviour
             currentState = RatStates.Running;
         }
     }
-
     public void OnCollisionExit(Collision other)
     {
+        /*
         if (other.gameObject.CompareTag("Ground"))
         {
             currentState = RatStates.Grabbed;
         }
+        */
     }
 
 }
