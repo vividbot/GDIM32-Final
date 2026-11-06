@@ -10,34 +10,47 @@ public enum RatStates
 public class RatMovement : MonoBehaviour
 {
     //State Machine
-    RatStates currentState;
-
+    [SerializeField] RatStates currentState;
     private Rigidbody ratRB;
-
-    private SplineAnimate splineAnimator;
-
-    /*
-    [Header("Rat Game Objects")] 
-    [SerializeField] private GameObject ratOnGround;
-    [SerializeField] private GameObject ratInAir;
-
-    Saving this just in case I reapproach the double GameObject solution.
-
-    finishing this on Wednesday!!! 
-    */
 
     private void Start()
     {
         Locator.Instance.PickUp.GrabbedRat += RatGrabbed;
-        splineAnimator = GetComponent<SplineAnimate>();
-        //ratRB = GetComponent<Rigidbody>();
+        ratRB = GetComponent<Rigidbody>();
+    }
+
+    public void Update()
+    {
+        /*
+        if (currentState == RatStates.Running)
+        {
+            GetComponent<SplineAnimate>().enabled = true;
+        }
+        */
     }
 
     public void RatGrabbed()
     {
-        Debug.Log("grabbed rat");
-        currentState = RatStates.Grabbed;
-        splineAnimator.enabled = false;
+        //Debug.Log("grabbed rat");
+        currentState = RatStates.Grabbed; //somehow, the code needs the state to disable the spline animate component. what.
+        GetComponent<SplineAnimate>().enabled = false;
+    }
+
+    public void OnCollisionEnter(Collision other)
+    {
+        if(other.gameObject.CompareTag("Ground"))
+        {
+            currentState = RatStates.Running;
+        }
+    }
+    public void OnCollisionExit(Collision other)
+    {
+        /*
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            currentState = RatStates.Grabbed;
+        }
+        */
     }
 
 }

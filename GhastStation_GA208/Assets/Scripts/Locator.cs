@@ -23,7 +23,8 @@ public class Locator : MonoBehaviour
         Instance = this;
 
         GameObject playerObj = GameObject.FindWithTag("Player");
-        PickUp = playerObj.GetComponent<PickupController>();
+        GameObject camera = GameObject.FindWithTag("MainCamera");
+        PickUp = camera.GetComponent<PickupController>();
         Player = playerObj.GetComponent<PlayerScript>();
     }
 
