@@ -11,57 +11,45 @@ public class RatMovement : MonoBehaviour
 {
     //State Machine
     [SerializeField] RatStates currentState;
-    [SerializeField] float currentY;
-    [SerializeField] bool isGrounded;
-    //
+    private Rigidbody ratRB;
+
+    /*
+    [Header("Rat Game Objects")] 
+    [SerializeField] private GameObject ratOnGround;
+    [SerializeField] private GameObject ratInAir;
+
+    Saving this just in case I reapproach the double GameObject solution.
+
+    finishing this on Wednesday!!! 
+    */
+
     private void Start()
     {
-        
         Locator.Instance.PickUp.GrabbedRat += RatGrabbed;
+        ratRB = GetComponent<Rigidbody>();
     }
 
     public void Update()
     {
-        //currentY = transform.position.y;
-        /*
-        if(currentState == RatStates.Running && isGrounded)
+        if (currentState == RatStates.Running)
         {
             GetComponent<SplineAnimate>().enabled = true;
         }
-
-        if(currentState == RatStates.Grabbed)
-        {
-            //GetComponent<SplineAnimate>().enabled = false;
-        }\
-        */
     }
 
     public void RatGrabbed()
     {
-        GetComponent<SplineAnimate>().enabled = false;
-        Debug.Log("StateChange");
+        Debug.Log("grabbed rat");
         currentState = RatStates.Grabbed;
-        //isGrounded = false;
+        GetComponent<SplineAnimate>().enabled = false;
     }
 
-    /*
-    private void OnCollisionStay(Collision other)
-    {
-        if (other.gameObject.CompareTag("Ground") && currentState != RatStates.Grabbed)
-        {
-            currentState = RatStates.Running;
-            isGrounded = true;
-            Debug.Log("is Grounded");
-        }
-    }
-    */
-
-    private void OnCollisionEnter(Collision other)
+    public void OnCollisionEnter(Collision other)
     {
         if(other.gameObject.CompareTag("Ground"))
         {
             currentState = RatStates.Running;
-            GetComponent<SplineAnimate>().enabled = true;
         }
     }
+
 }
