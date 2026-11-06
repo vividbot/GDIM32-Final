@@ -11,46 +11,57 @@ public class RatMovement : MonoBehaviour
 {
     //State Machine
     [SerializeField] RatStates currentState;
-    private Rigidbody ratRB;
-
+    [SerializeField] float currentY;
+    [SerializeField] bool isGrounded;
+    //
     private void Start()
     {
+        
         Locator.Instance.PickUp.GrabbedRat += RatGrabbed;
-        ratRB = GetComponent<Rigidbody>();
     }
 
     public void Update()
     {
+        //currentY = transform.position.y;
         /*
-        if (currentState == RatStates.Running)
+        if(currentState == RatStates.Running && isGrounded)
         {
             GetComponent<SplineAnimate>().enabled = true;
         }
+
+        if(currentState == RatStates.Grabbed)
+        {
+            //GetComponent<SplineAnimate>().enabled = false;
+        }\
         */
     }
 
     public void RatGrabbed()
     {
-        //Debug.Log("grabbed rat");
-        currentState = RatStates.Grabbed; //somehow, the code needs the state to disable the spline animate component. what.
         GetComponent<SplineAnimate>().enabled = false;
+        Debug.Log("StateChange");
+        currentState = RatStates.Grabbed;
+        //isGrounded = false;
     }
 
-    public void OnCollisionEnter(Collision other)
+    /*
+    private void OnCollisionStay(Collision other)
+    {
+        if (other.gameObject.CompareTag("Ground") && currentState != RatStates.Grabbed)
+        {
+            currentState = RatStates.Running;
+            isGrounded = true;
+            Debug.Log("is Grounded");
+        }
+    }
+    */
+
+    private void OnCollisionEnter(Collision other)
     {
         if(other.gameObject.CompareTag("Ground"))
         {
             currentState = RatStates.Running;
+            GetComponent<SplineAnimate>().enabled = true;
         }
     }
-    public void OnCollisionExit(Collision other)
-    {
-        /*
-        if (other.gameObject.CompareTag("Ground"))
-        {
-            currentState = RatStates.Grabbed;
-        }
-        */
-    }
-
 }

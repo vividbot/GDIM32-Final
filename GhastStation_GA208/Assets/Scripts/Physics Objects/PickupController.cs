@@ -63,7 +63,7 @@ public class PickupController : MonoBehaviour
     {
         if(pickObject.GetComponent<Rigidbody>())
         {
-            Debug.Log("Grabbed " + pickObject.name);
+            //Debug.Log("Grabbed " + pickObject.name);
             heldObjectRB = pickObject.GetComponent<Rigidbody>(); //grabs held objects RB
             heldObjectRB.useGravity = false; //prevents held object from falling
             heldObjectRB.linearDamping = pickUpStiffness; //adds a bit of drag to the object 
@@ -74,7 +74,7 @@ public class PickupController : MonoBehaviour
 
             if(pickObject.CompareTag("Rat"))
             {
-                Debug.Log("grabbed rat event");
+                pickObject.GetComponent<SplineAnimate>().enabled = false;
                 GrabbedRat?.Invoke();
             }
 
