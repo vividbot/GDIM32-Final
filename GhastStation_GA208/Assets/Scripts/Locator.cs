@@ -6,6 +6,7 @@ public class Locator : MonoBehaviour
     public static Locator Instance { get; private set; }
     public PickupController PickUp { get; private set; }
     public PlayerScript Player { get; private set; }
+    public Q_NPCInteract NPCInteract { get; private set; }
 
     public delegate void ObjectsPlaced(int x);
     public event ObjectsPlaced objectCountUpdate;
@@ -24,8 +25,10 @@ public class Locator : MonoBehaviour
 
         GameObject playerObj = GameObject.FindWithTag("Player");
         GameObject camera = GameObject.FindWithTag("MainCamera");
+        GameObject NPC = GameObject.FindWithTag("NPC");
         PickUp = camera.GetComponent<PickupController>();
         Player = playerObj.GetComponent<PlayerScript>();
+        NPCInteract = NPC.GetComponent<Q_NPCInteract>();
     }
 
     public virtual void QuestObjectScored(int pointsScored)

@@ -9,6 +9,7 @@ TagManager:
   - QuestItem
   - Rat
   - IgnoreMe
+  - NPC
   layers:
   - Default
   - TransparentFX

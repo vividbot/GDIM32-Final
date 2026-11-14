@@ -7,6 +7,12 @@ public enum GhostTalkStates
 }
 public class Q_NPCInteract : MonoBehaviour
 {
+    //events I fucking love events
+    public delegate void EmptyDelagate();
+    public event EmptyDelagate ActivateDialogBox;
+    public event EmptyDelagate MoveOntoNextLine;
+
+
     [Header("Dialog Distance Variables")]
     [SerializeField] private float minTalkingDistance = 5f;
     [SerializeField] private bool isWithinTalkingDistance = false;
@@ -50,11 +56,13 @@ public class Q_NPCInteract : MonoBehaviour
         {
             Debug.Log("talking to npc");
             //set UI to active
+            ActivateDialogBox?.Invoke();
             ghostState = GhostTalkStates.Talking;
         }
         else if(isWithinTalkingDistance && ghostState == GhostTalkStates.Talking)
         {
             //move onto next dialog line
+            MoveOntoNextLine?.Invoke();
             Debug.Log("Moved onto next dialog option");
         }
 
