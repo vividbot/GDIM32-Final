@@ -11,6 +11,9 @@ public class Locator : MonoBehaviour
     public delegate void ObjectsPlaced(int x);
     public event ObjectsPlaced objectCountUpdate;
 
+    public delegate void QuestTriggered(GameObject questName, Transform questLocation);
+    public event QuestTriggered newQuestStarted;
+
     private int currentPoints;
 
     private void Awake()

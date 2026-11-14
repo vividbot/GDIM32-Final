@@ -22,7 +22,7 @@ public class E_QuestZone : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("QuestItem"))
+        if (other.gameObject.CompareTag("QuestItem") || other.gameObject.CompareTag("RemovableQuestItem"))
         {
             // Debug.Log("Item Placed in zone");
             Locator.Instance.QuestObjectScored(1);
@@ -36,7 +36,8 @@ public class E_QuestZone : MonoBehaviour
             // Debug.Log("Item Removed From Zone");
             Locator.Instance.QuestObjectScored(-1);
 
-        } 
+        }
+        
         // Debug.Log("Item Removed from Zone");
     }
 }
