@@ -7,6 +7,9 @@ public class Locator : MonoBehaviour
     public PickupController PickUp { get; private set; }
     public PlayerScript Player { get; private set; }
 
+    public delegate void ObjectsPlaced(int x);
+    public event ObjectsPlaced objectCountUpdate;
+
     private int currentPoints;
 
     private void Awake()
@@ -20,14 +23,16 @@ public class Locator : MonoBehaviour
         Instance = this;
 
         GameObject playerObj = GameObject.FindWithTag("Player");
-        PickUp = playerObj.GetComponent<PickupController>();
+        GameObject camera = GameObject.FindWithTag("MainCamera");
+        PickUp = camera.GetComponent<PickupController>();
         Player = playerObj.GetComponent<PlayerScript>();
     }
 
     public virtual void QuestObjectScored(int pointsScored)
     {
         currentPoints += pointsScored;   
-        Debug.Log("Objects in Zone - " + currentPoints);
-        
+        // Debug.Log("Objects in Zone - " + currentPoints);
+        objectCountUpdate.Invoke(pointsScored);
+
     }
 }
