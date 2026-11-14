@@ -3,7 +3,9 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
-
+    //events
+    public delegate void EmptyDelagate();
+    public event EmptyDelagate Interacted;
 
     [SerializeField] private float moveSpeed = 10.0f; 
     private CharacterController controller;   
@@ -23,9 +25,12 @@ public class PlayerScript : MonoBehaviour
 
         Vector3 move = transform.right * x + transform.forward * z;
 
-
-        
         controller.SimpleMove(move * moveSpeed * Time.deltaTime);
+
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            Interacted?.Invoke();
+        }
 
     }
 
