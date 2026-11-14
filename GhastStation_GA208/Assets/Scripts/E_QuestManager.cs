@@ -7,12 +7,19 @@ public class E_QuestManager : MonoBehaviour
 
     [SerializeField] GameObject testQuest;
     [SerializeField] Transform  testQuestLocation;
-    public bool testQuest;
+    public bool TriggerQuestInspector;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
     Locator.Instance.newQuestStarted += TriggerQuest;
 
+    }
+    void Update()
+    {
+        if(TriggerQuestInspector == true)
+        {
+            TriggerQuest(testQuest, testQuestLocation);
+        }
     }
 
     // Update is called once per frame
