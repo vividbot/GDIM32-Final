@@ -21,6 +21,7 @@ public class PickupController : MonoBehaviour
     [SerializeField] private float pickUpRange = 0.5f;
     [SerializeField] private float pickUpForce = 100f;
     [SerializeField] private float pickUpStiffness = 20f; //higher the number, less bounciness. Lower the number, more bounciness. 
+    [SerializeField] private float throwForce = 10f; 
 
     private void Update()
     {
@@ -67,7 +68,7 @@ public class PickupController : MonoBehaviour
             heldObjectRB = pickObject.GetComponent<Rigidbody>(); //grabs held objects RB
             heldObjectRB.useGravity = false; //prevents held object from falling
             heldObjectRB.linearDamping = pickUpStiffness; //adds a bit of drag to the object 
-            //heldObjectRB.constraints = RigidbodyConstraints.FreezeRotation; //freezes the rotation of the object.
+            heldObjectRB.constraints = RigidbodyConstraints.FreezeRotation; //freezes the rotation of the object.
 
             heldObjectRB.transform.parent = holdArea;
             heldObject = pickObject;
@@ -84,10 +85,9 @@ public class PickupController : MonoBehaviour
     void DropObject()
     {
         //This basically undoes everything PickUpObject does. 
-        //I'd like to add some force to throw the object a bit, especially in regards to the rats, but that might make some puzzles a bit harder...
         heldObjectRB.useGravity = true;
         heldObjectRB.linearDamping = 1; 
-        //heldObjectRB.constraints = RigidbodyConstraints.None;
+        heldObjectRB.constraints = RigidbodyConstraints.None;
 
         heldObjectRB.transform.parent = null;
         heldObject = null;
@@ -105,10 +105,14 @@ public class PickupController : MonoBehaviour
 
     void ThrowObject()
     {
-        //Throwing Logic. Drop object is here for now so it actually does something, will update with actual logic once it's ready.
-        Debug.Log("object thrown");
-        DropObject();
+        heldObjectRB.AddForce(transform.forward * throwForce);
+        Debug.Log("thrown object");
+        heldObjectRB.useGravity = true;
+        heldObjectRB.linearDamping = 1;
+        heldObjectRB.constraints = RigidbodyConstraints.None;
 
+        heldObjectRB.transform.parent = null;
+        heldObject = null;
     }
 
     //https://www.youtube.com/watch?v=6bFCQqabfzo Utilized this tutorial, though I edited it every so slightly in terms of organization and some variables, also added the gizmo.

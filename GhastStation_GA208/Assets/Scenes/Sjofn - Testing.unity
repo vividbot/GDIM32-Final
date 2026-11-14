@@ -423,6 +423,10 @@ PrefabInstance:
       value: 2300
       objectReference: {fileID: 0}
     - target: {fileID: 7130132187232285164, guid: 308e7600bcbd38843a47e21e4151fc29, type: 3}
+      propertyPath: throwForce
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 7130132187232285164, guid: 308e7600bcbd38843a47e21e4151fc29, type: 3}
       propertyPath: IgnoreMe.m_Bits
       value: 128
       objectReference: {fileID: 0}
@@ -528,7 +532,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: dc6858e865e2895479812b648fab1685, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1508,6 +1512,10 @@ PrefabInstance:
     - target: {fileID: 7199203610655005590, guid: 9578d825b7d46d740993ee4294643950, type: 3}
       propertyPath: m_Name
       value: Rat
+      objectReference: {fileID: 0}
+    - target: {fileID: 7750010879508862127, guid: 9578d825b7d46d740993ee4294643950, type: 3}
+      propertyPath: m_Mass
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
