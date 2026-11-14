@@ -4,6 +4,9 @@ using UnityEngine;
 public class E_QuestManager : MonoBehaviour
 {
     private GameObject questName;
+
+    [SerializeField] GameObject testQuest;
+    [SerializeField] Transform  testQuestLocation;
     public bool testQuest;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
