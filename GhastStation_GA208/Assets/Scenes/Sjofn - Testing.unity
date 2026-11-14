@@ -476,7 +476,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 612676257}
-  - component: {fileID: 612676256}
+  - component: {fileID: 612676258}
+  - component: {fileID: 612676259}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -484,27 +485,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &612676256
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 612676255}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.3967054, y: 2.4313393, z: 1.344551}
-  m_Center: {x: 0, y: -0.59, z: 0}
 --- !u!4 &612676257
 Transform:
   m_ObjectHideFlags: 0
@@ -521,6 +501,33 @@ Transform:
   - {fileID: 790394229}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &612676258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612676255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e014128160f9d0d4ba16f64443ba0e11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Q_NPCInteract
+  minTalkingDistance: 5
+  isWithinTalkingDistance: 0
+--- !u!114 &612676259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612676255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b980ac4037401840b7e72eabf833bf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Q_Billboarding
+  camera: {fileID: 783868310}
 --- !u!1 &727031072
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,6 +640,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &783868310 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 2736476095261592638, guid: 308e7600bcbd38843a47e21e4151fc29, type: 3}
+  m_PrefabInstance: {fileID: 501260884}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &790394228
 GameObject:
   m_ObjectHideFlags: 0
