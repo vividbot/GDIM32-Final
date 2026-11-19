@@ -18,13 +18,15 @@ public class Quest_Toilet : MonoBehaviour
 
     void Start()
     {
-        PlungerActive = true;
-        if(Instance != null && Instance == this)
-        {
-            Destroy(this);
-            return;
-        }
+        // PlungerActive = true;
+        // if(Instance != null && Instance == this)
+        // {
+        //     Destroy(this);
+        //     return;
+        // }
 
-        Instance = this;
+        // Instance = this;
+
+        Debug.Log("Toilet Quest is Active");
     }
 }
