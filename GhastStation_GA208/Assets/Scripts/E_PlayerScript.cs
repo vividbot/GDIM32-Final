@@ -9,8 +9,14 @@ public class PlayerScript : MonoBehaviour
 
     [SerializeField] private float moveSpeed = 10.0f; 
     [SerializeField] private float webSpeedMultiplier = 0.5f;
+
     private CharacterController controller;   
-    
+
+
+    //Testing stuff
+    [SerializeField] GameObject QuestToSpawn;
+    [SerializeField] Transform QuestPosition;
+     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,6 +29,14 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        //Test Quest Triggering
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            Locator.Instance.TriggerQuest(QuestToSpawn, QuestPosition);
+            
+        }
 
         // Handle Player movement
         float x = Input.GetAxis("Horizontal");

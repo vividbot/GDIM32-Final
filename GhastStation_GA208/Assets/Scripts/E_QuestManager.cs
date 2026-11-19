@@ -1,13 +1,13 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class E_QuestManager : MonoBehaviour
 {
-    private GameObject questName;
+    
 
-    [SerializeField] GameObject testQuest;
-    [SerializeField] Transform  testQuestLocation;
+    [SerializeField] private GameObject testQuest;
+    [SerializeField] private Transform  testQuestLocation;
     public bool TriggerQuestInspector;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

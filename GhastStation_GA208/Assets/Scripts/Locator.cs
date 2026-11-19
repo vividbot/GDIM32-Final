@@ -41,4 +41,11 @@ public class Locator : MonoBehaviour
         objectCountUpdate.Invoke(pointsScored);
 
     }
+
+    public virtual void TriggerQuest(GameObject questObject, Transform location)
+    {
+
+        Debug.Log("Locator Received Quest trigger input.");
+        newQuestStarted.Invoke(questObject, location);
+    }
 }
