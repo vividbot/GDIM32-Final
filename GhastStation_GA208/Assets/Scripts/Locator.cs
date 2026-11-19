@@ -29,6 +29,7 @@ public class Locator : MonoBehaviour
         GameObject playerObj = GameObject.FindWithTag("Player");
         GameObject camera = GameObject.FindWithTag("MainCamera");
         GameObject NPC = GameObject.FindWithTag("NPC");
+
         PickUp = camera.GetComponent<PickupController>();
         Player = playerObj.GetComponent<PlayerScript>();
         NPCInteract = NPC.GetComponent<Q_NPCInteract>();

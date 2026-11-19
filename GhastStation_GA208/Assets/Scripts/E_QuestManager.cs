@@ -8,12 +8,11 @@ public class E_QuestManager : MonoBehaviour
     [SerializeField] private Transform  testQuestLocation;
     public bool TriggerQuestInspector;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-    Locator.Instance.newQuestStarted += TriggerQuest;
-
+        Locator.Instance.newQuestStarted += TriggerQuest;
     }
+
     void Update()
     {
         if(TriggerQuestInspector == true)

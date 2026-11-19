@@ -1,3 +1,6 @@
+using System;
+using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public enum GhostTalkStates
@@ -10,11 +13,24 @@ public class Q_NPCInteract : MonoBehaviour
     public delegate void EmptyDelagate();
     public event EmptyDelagate QuestAssigned; //invoke this event when needed, not sure of a place for it right now.
 
+    private GhostTalkStates ghostState;
+
     [Header("Dialog Distance Variables")]
     [SerializeField] private float minTalkingDistance = 5f;
     [SerializeField] private bool isWithinTalkingDistance = false;
+
+
+    [Header("NPC Quest")]
+    [SerializeField] private GameObject questObject;
+    [SerializeField] private Transform questLocation;
+    private bool canGiveTask = true;
+
+    [Header("Dialog Settings")]
+    public string[] lines;
+    [SerializeField] private float textSpeed;
+    [SerializeField] private TextMeshProUGUI dialogText;
     [SerializeField] private GameObject dialogBox;
-    private GhostTalkStates ghostState;
+    private int index;
 
     //player vector
     private Vector3 playerPosition;
@@ -23,6 +39,7 @@ public class Q_NPCInteract : MonoBehaviour
     {
         Locator.Instance.Player.Interacted += PlayerInteract;
         ghostState = GhostTalkStates.NotTalking;
+        dialogText.text = string.Empty;
     }
 
     void Update()
@@ -38,7 +55,7 @@ public class Q_NPCInteract : MonoBehaviour
         {
             isWithinTalkingDistance = false;
             ghostState = GhostTalkStates.NotTalking;
-            dialogBox.SetActive(false);
+            EndDialog();
         }
 
     }
@@ -47,25 +64,65 @@ public class Q_NPCInteract : MonoBehaviour
     {
         if (!isWithinTalkingDistance)
         {
-            Debug.Log("You aren't within range silly");
-            //I will add actual dialog when I get home. I have some scripts from a project on my computer that will work pretty well for dialog I think.
             return;
         }
+
         else if (isWithinTalkingDistance && ghostState == GhostTalkStates.NotTalking)
         {
+            StartDialog();
+
             Debug.Log("talking to npc");
-            //set UI to active
-            dialogBox.SetActive(true); 
-            //placeholder just to get it working. For now, to escape the dialog box, you need to walk away from the npc.
-            //I will make it so if you press E when dialog is exhausted it will close
             ghostState = GhostTalkStates.Talking;
-            //trigger quest?
+
+            if (canGiveTask == true)
+            {
+                Locator.Instance.TriggerQuest(questObject, questLocation);
+                Debug.Log("I am giving you a quest!");
+                canGiveTask = false;
+            }
+
         }
         else if(isWithinTalkingDistance && ghostState == GhostTalkStates.Talking)
         {
-            //move onto next dialog line
-            Debug.Log("Moved onto next dialog option");
+            NextLine();
         }
 
+    }
+
+    void StartDialog()
+    {
+        dialogBox.SetActive(true);
+        index = 0;
+        StartCoroutine(TypeLine());
+
+    }
+    void NextLine()
+    {
+        if (index < lines.Length - 1)
+        {
+            index++;
+            dialogText.text = string.Empty;
+            StartCoroutine(TypeLine());
+        }
+        else
+        {
+            EndDialog();
+        }
+    }
+
+    void EndDialog()
+    {
+        dialogBox.SetActive(false);
+        dialogText.text = string.Empty;
+        ghostState = GhostTalkStates.NotTalking;
+    }
+
+    IEnumerator TypeLine()
+    {
+        foreach (char c in lines[index].ToCharArray())
+        {
+            dialogText.text += c;
+            yield return new WaitForSeconds(textSpeed);
+        }
     }
 }

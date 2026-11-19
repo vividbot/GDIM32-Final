@@ -134,7 +134,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &82674045
 Transform:
   m_ObjectHideFlags: 0
@@ -151,6 +151,71 @@ Transform:
   - {fileID: 1934910073}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &197482442
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3061492371452439806, guid: 7d63cbcec176f5d458f85065081bc85d, type: 3}
+      propertyPath: testQuest
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3061492371452439806, guid: 7d63cbcec176f5d458f85065081bc85d, type: 3}
+      propertyPath: testQuestLocation
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3747859464478720973, guid: 7d63cbcec176f5d458f85065081bc85d, type: 3}
+      propertyPath: m_Name
+      value: QuestManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 9213811575058698262, guid: 7d63cbcec176f5d458f85065081bc85d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.475
+      objectReference: {fileID: 0}
+    - target: {fileID: 9213811575058698262, guid: 7d63cbcec176f5d458f85065081bc85d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.507
+      objectReference: {fileID: 0}
+    - target: {fileID: 9213811575058698262, guid: 7d63cbcec176f5d458f85065081bc85d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.705
+      objectReference: {fileID: 0}
+    - target: {fileID: 9213811575058698262, guid: 7d63cbcec176f5d458f85065081bc85d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9213811575058698262, guid: 7d63cbcec176f5d458f85065081bc85d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9213811575058698262, guid: 7d63cbcec176f5d458f85065081bc85d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9213811575058698262, guid: 7d63cbcec176f5d458f85065081bc85d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9213811575058698262, guid: 7d63cbcec176f5d458f85065081bc85d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9213811575058698262, guid: 7d63cbcec176f5d458f85065081bc85d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9213811575058698262, guid: 7d63cbcec176f5d458f85065081bc85d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7d63cbcec176f5d458f85065081bc85d, type: 3}
 --- !u!1 &277459824
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,7 +485,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4794714392185278533, guid: 308e7600bcbd38843a47e21e4151fc29, type: 3}
       propertyPath: moveSpeed
-      value: 2300
+      value: 3000
       objectReference: {fileID: 0}
     - target: {fileID: 7130132187232285164, guid: 308e7600bcbd38843a47e21e4151fc29, type: 3}
       propertyPath: throwForce
@@ -450,7 +515,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &590303088
 Transform:
   m_ObjectHideFlags: 0
@@ -515,6 +580,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Q_NPCInteract
   minTalkingDistance: 5
   isWithinTalkingDistance: 0
+  questObject: {fileID: 751016178379675329, guid: be4179f2cea76e74384374b3c7482f59, type: 3}
+  questLocation: {fileID: 1800447289}
+  lines:
+  - Hey, I need dat plunger.
+  - GIMME THAT PLUNGER!!
+  textSpeed: 0
+  dialogText: {fileID: 1233918224}
   dialogBox: {fileID: 1141539470}
 --- !u!114 &612676259
 MonoBehaviour:
@@ -1005,7 +1077,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sup Idiot
+  m_text: plungir
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1507,6 +1579,37 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!1 &1800447288
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1800447289}
+  m_Layer: 0
+  m_Name: TestLocation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1800447289
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1800447288}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.68, y: 0.07909, z: 3.35}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1812691190 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3318235899724713187, guid: 0d785ee803e06ab438acb49c8910a98d, type: 3}
@@ -1952,6 +2055,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 2023897145}
   - {fileID: 1747957431}
+  - {fileID: 197482442}
   - {fileID: 1480917959}
   - {fileID: 82674045}
   - {fileID: 590303088}
@@ -1964,3 +2068,4 @@ SceneRoots:
   - {fileID: 1849030478}
   - {fileID: 501260884}
   - {fileID: 612676257}
+  - {fileID: 1800447289}
