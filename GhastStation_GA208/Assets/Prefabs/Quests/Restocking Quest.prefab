@@ -53,9 +53,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7537361756045871999}
     m_Modifications:
+    - target: {fileID: 1989844749797684122, guid: 57a6d19d456e75f4494dc8a9fe6a0124, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2213639059176601944, guid: 57a6d19d456e75f4494dc8a9fe6a0124, type: 3}
       propertyPath: m_VersionIndex
       value: 3868
+      objectReference: {fileID: 0}
+    - target: {fileID: 3334032348094531047, guid: 57a6d19d456e75f4494dc8a9fe6a0124, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3408125169553686956, guid: 57a6d19d456e75f4494dc8a9fe6a0124, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3966914952529168319, guid: 57a6d19d456e75f4494dc8a9fe6a0124, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020157996890206830, guid: 57a6d19d456e75f4494dc8a9fe6a0124, type: 3}
+      propertyPath: m_Mass
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 5124522003931650644, guid: 57a6d19d456e75f4494dc8a9fe6a0124, type: 3}
       propertyPath: m_LocalPosition.x
@@ -97,9 +117,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5413558905461581623, guid: 57a6d19d456e75f4494dc8a9fe6a0124, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5503405215689737918, guid: 57a6d19d456e75f4494dc8a9fe6a0124, type: 3}
       propertyPath: m_Name
       value: RestockCrate 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173460972538064814, guid: 57a6d19d456e75f4494dc8a9fe6a0124, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7572386788681412781, guid: 57a6d19d456e75f4494dc8a9fe6a0124, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7705654772588009073, guid: 57a6d19d456e75f4494dc8a9fe6a0124, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8673640458770633216, guid: 57a6d19d456e75f4494dc8a9fe6a0124, type: 3}
+      propertyPath: m_Mass
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

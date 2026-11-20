@@ -12,15 +12,17 @@ public class UI : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        gameObject.SetActive(false);
+
         uiText.text = "Items Stocked - 0";
         objectCount = 0;
         Locator.Instance.objectCountUpdate += ObjectCountUpdated;
+        Locator.Instance.NPCInteract.QuestAssigned += QuestStarted;
     }
 
-    // Update is called once per frame
-    void Update()
+    void QuestStarted()
     {
-        
+        gameObject.SetActive(true);
     }
 
     void ObjectCountUpdated(int x)

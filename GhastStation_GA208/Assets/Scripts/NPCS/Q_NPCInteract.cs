@@ -11,7 +11,7 @@ public enum GhostTalkStates
 public class Q_NPCInteract : MonoBehaviour
 {
     public delegate void EmptyDelagate();
-    public event EmptyDelagate QuestAssigned; //invoke this event when needed, not sure of a place for it right now.
+    public event EmptyDelagate QuestAssigned; 
 
     private GhostTalkStates ghostState;
 
@@ -77,6 +77,7 @@ public class Q_NPCInteract : MonoBehaviour
             if (canGiveTask == true)
             {
                 Locator.Instance.TriggerQuest(questObject, questLocation);
+                QuestAssigned?.Invoke();
                 Debug.Log("I am giving you a quest!");
                 canGiveTask = false;
             }
