@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 5406506681557911890}
   - component: {fileID: 5450002752179337182}
   - component: {fileID: 2234373059260138434}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: QuestZone
-  m_TagString: Untagged
+  m_TagString: Quest zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68,6 +68,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d785701607beea9469e43666338b0984, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  TagType: RestockItem
+  TrackExit: 1
+  ScoreAmmount: 1
 --- !u!65 &2234373059260138434
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -140,6 +143,10 @@ PrefabInstance:
     - target: {fileID: 3848065531070433641, guid: 4be86d54270db81409fb4b5d09f381c9, type: 3}
       propertyPath: m_Name
       value: Shelves_Blockout (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3848065531070433641, guid: 4be86d54270db81409fb4b5d09f381c9, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

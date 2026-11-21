@@ -10,6 +10,9 @@ TagManager:
   - Rat
   - IgnoreMe
   - NPC
+  - RemovableQuestItem
+  - RestockItem
+  - PlungerItem
   layers:
   - Default
   - TransparentFX

@@ -2612,13 +2612,17 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 637931386}
+    - target: {fileID: 2612926608816705700, guid: c9354a59562504a4ebf2fd8a30193732, type: 3}
+      propertyPath: m_TagString
+      value: RestockItem
+      objectReference: {fileID: 0}
     - target: {fileID: 2708137591156797018, guid: c9354a59562504a4ebf2fd8a30193732, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 637931386}
     - target: {fileID: 2708137591156797018, guid: c9354a59562504a4ebf2fd8a30193732, type: 3}
       propertyPath: m_VersionIndex
-      value: 3874
+      value: 3877
       objectReference: {fileID: 0}
     - target: {fileID: 3274477795796685887, guid: c9354a59562504a4ebf2fd8a30193732, type: 3}
       propertyPath: m_Name
@@ -2677,33 +2681,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 103932149949627109, guid: 5182e2d23eee15f499a3f9f4ddc0aea9, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1732740516350275477, guid: 5182e2d23eee15f499a3f9f4ddc0aea9, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2527012468069244543, guid: 5182e2d23eee15f499a3f9f4ddc0aea9, type: 3}
       propertyPath: m_Name
       value: QuestZone
-      objectReference: {fileID: 0}
-    - target: {fileID: 2527012468069244543, guid: 5182e2d23eee15f499a3f9f4ddc0aea9, type: 3}
-      propertyPath: m_Layer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2527012468069244543, guid: 5182e2d23eee15f499a3f9f4ddc0aea9, type: 3}
-      propertyPath: m_TagString
-      value: Quest zone
-      objectReference: {fileID: 0}
-    - target: {fileID: 3627500330247432557, guid: 5182e2d23eee15f499a3f9f4ddc0aea9, type: 3}
-      propertyPath: m_Layer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3627500330247432557, guid: 5182e2d23eee15f499a3f9f4ddc0aea9, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3671244065180755469, guid: 5182e2d23eee15f499a3f9f4ddc0aea9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2744,18 +2724,6 @@ PrefabInstance:
     - target: {fileID: 3671244065180755469, guid: 5182e2d23eee15f499a3f9f4ddc0aea9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5406506681557911890, guid: 5182e2d23eee15f499a3f9f4ddc0aea9, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5798424500121256914, guid: 5182e2d23eee15f499a3f9f4ddc0aea9, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7671556513311436412, guid: 5182e2d23eee15f499a3f9f4ddc0aea9, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2850,6 +2818,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2777925836117581728, guid: a08bbf5eceda49d4b9e409cfe4c49646, type: 3}
+      propertyPath: PlungerTag
+      value: PlungerItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 2777925836117581728, guid: a08bbf5eceda49d4b9e409cfe4c49646, type: 3}
+      propertyPath: RestockTag
+      value: RestockItem
+      objectReference: {fileID: 0}
     - target: {fileID: 4661296061875368592, guid: a08bbf5eceda49d4b9e409cfe4c49646, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -2910,6 +2886,18 @@ PrefabInstance:
     - target: {fileID: 6889485993767934847, guid: b197435046c44574f80b44cc25ac716d, type: 3}
       propertyPath: m_Name
       value: ToiletZone
+      objectReference: {fileID: 0}
+    - target: {fileID: 8815445635915670826, guid: b197435046c44574f80b44cc25ac716d, type: 3}
+      propertyPath: Tag
+      value: PlungerItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 8815445635915670826, guid: b197435046c44574f80b44cc25ac716d, type: 3}
+      propertyPath: TagType
+      value: PlungerItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 8815445635915670826, guid: b197435046c44574f80b44cc25ac716d, type: 3}
+      propertyPath: ScoreAmmount
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
