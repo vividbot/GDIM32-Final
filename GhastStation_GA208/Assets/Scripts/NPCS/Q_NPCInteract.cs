@@ -70,14 +70,12 @@ public class Q_NPCInteract : MonoBehaviour
         else if (isWithinTalkingDistance && ghostState == GhostTalkStates.NotTalking)
         {
             StartDialog();
-            Debug.Log("talking to npc");
             ghostState = GhostTalkStates.Talking;
 
             if (canGiveTask == true)
             {
                 Locator.Instance.TriggerQuest(questObject, questLocation);
                 QuestAssigned?.Invoke();
-                Debug.Log("I am giving you a quest!");
                 canGiveTask = false;
             }
 
@@ -91,7 +89,6 @@ public class Q_NPCInteract : MonoBehaviour
 
     void StartDialog()
     {
-        Debug.Log("Meow");  
         dialogBox.SetActive(true);
         index = 0;
 

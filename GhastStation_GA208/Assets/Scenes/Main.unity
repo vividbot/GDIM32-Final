@@ -18459,6 +18459,18 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 1500
       objectReference: {fileID: 0}
+    - target: {fileID: 5679810705064650201, guid: 308e7600bcbd38843a47e21e4151fc29, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679810705064650201, guid: 308e7600bcbd38843a47e21e4151fc29, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.833
+      objectReference: {fileID: 0}
+    - target: {fileID: 7130132187232285164, guid: 308e7600bcbd38843a47e21e4151fc29, type: 3}
+      propertyPath: throwForce
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7130132187232285164, guid: 308e7600bcbd38843a47e21e4151fc29, type: 3}
       propertyPath: IgnoreMe.m_Bits
       value: 68
@@ -18530,7 +18542,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 904548063559481853, guid: 3283b3d40bf11a54db5fb2355c01e7ea, type: 3}
       propertyPath: 'lines.Array.data[0]'
-      value: Um. I'm just filling up my car.
+      value: Um. I'm just putting gas in my ghost car. For ghosts.
       objectReference: {fileID: 0}
     - target: {fileID: 904548063559481853, guid: 3283b3d40bf11a54db5fb2355c01e7ea, type: 3}
       propertyPath: 'lines.Array.data[1]'
@@ -18538,7 +18550,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 904548063559481853, guid: 3283b3d40bf11a54db5fb2355c01e7ea, type: 3}
       propertyPath: 'lines.Array.data[2]'
-      value: Can I like. Help you? Or something?
+      value: Can I like. Help you? Or something? You're freaking me out.
       objectReference: {fileID: 0}
     - target: {fileID: 904548063559481853, guid: 3283b3d40bf11a54db5fb2355c01e7ea, type: 3}
       propertyPath: withinRangeIndicator
