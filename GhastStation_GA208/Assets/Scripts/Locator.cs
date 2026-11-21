@@ -1,3 +1,4 @@
+using System.Collections.Specialized;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 
@@ -8,13 +9,12 @@ public class Locator : MonoBehaviour
     public PlayerScript Player { get; private set; }
     public Q_NPCInteract NPCInteract { get; private set; }
 
-    public delegate void ObjectsPlaced(int x);
+    public delegate void ObjectsPlaced(int x, string tag);
     public event ObjectsPlaced objectCountUpdate;
 
     public delegate void QuestTriggered(GameObject questName, Transform questLocation);
     public event QuestTriggered newQuestStarted;
 
-    private int currentPoints;
 
     private void Awake()
     {
@@ -35,11 +35,12 @@ public class Locator : MonoBehaviour
         NPCInteract = NPC.GetComponent<Q_NPCInteract>();
     }
 
-    public virtual void QuestObjectScored(int pointsScored)
+    public virtual void QuestObjectScored(int pointsScored, string QuestType)
     {
-        currentPoints += pointsScored;   
+        
         // Debug.Log("Objects in Zone - " + currentPoints);
-        objectCountUpdate.Invoke(pointsScored);
+        objectCountUpdate.Invoke(pointsScored, QuestType);
+        Debug.Log(pointsScored + " " + QuestType);
 
     }
 

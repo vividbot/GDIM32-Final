@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 7828724434132905439}
   m_Layer: 8
   m_Name: Quest_Object
-  m_TagString: QuestItem
+  m_TagString: RestockItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
