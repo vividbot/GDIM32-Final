@@ -13,6 +13,7 @@ TagManager:
   - RemovableQuestItem
   - RestockItem
   - PlungerItem
+  - GrabbedRat
   layers:
   - Default
   - TransparentFX

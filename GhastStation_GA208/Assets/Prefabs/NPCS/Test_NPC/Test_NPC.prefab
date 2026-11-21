@@ -46,8 +46,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e014128160f9d0d4ba16f64443ba0e11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Q_NPCInteract
-  minTalkingDistance: 5
+  minTalkingDistance: 3
   isWithinTalkingDistance: 0
+  questObject: {fileID: 0}
+  questLocation: {fileID: 0}
+  lines: []
+  textSpeed: 0
+  dialogText: {fileID: 0}
   dialogBox: {fileID: 0}
 --- !u!114 &5777387594254708209
 MonoBehaviour:

@@ -13,19 +13,9 @@ public class RatMovement : MonoBehaviour
     [SerializeField] RatStates currentState;
     private Rigidbody ratRB;
 
-    /*
-    [Header("Rat Game Objects")] 
-    [SerializeField] private GameObject ratOnGround;
-    [SerializeField] private GameObject ratInAir;
-
-    Saving this just in case I reapproach the double GameObject solution.
-
-    finishing this on Wednesday!!! 
-    */
-
     private void Start()
     {
-        Locator.Instance.PickUp.GrabbedRat += RatGrabbed;
+        Locator.Instance.PickUp.GrabbedRat += RatHasBeenGrabbed;
         ratRB = GetComponent<Rigidbody>();
     }
 
@@ -35,21 +25,31 @@ public class RatMovement : MonoBehaviour
         {
             GetComponent<SplineAnimate>().enabled = true;
         }
+        if(currentState == RatStates.Grabbed)
+        {
+            GetComponent<SplineAnimate>().enabled = false;
+        }
+
     }
 
-    public void RatGrabbed()
+    public void RatHasBeenGrabbed()
     {
-        Debug.Log("grabbed rat");
-        currentState = RatStates.Grabbed;
-        GetComponent<SplineAnimate>().enabled = false;
+        if(gameObject.CompareTag("GrabbedRat"))
+        {
+            currentState = RatStates.Grabbed;
+
+        }
     }
 
     public void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.CompareTag("Ground"))
+        if(other.gameObject.CompareTag("Ground") && gameObject.CompareTag("GrabbedRat"))
         {
             currentState = RatStates.Running;
+            gameObject.tag = "Rat";
         }
     }
+
+    //-Sjofn
 
 }
