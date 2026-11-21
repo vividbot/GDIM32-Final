@@ -94,6 +94,7 @@ public class Q_NPCInteract : MonoBehaviour
     {
         dialogBox.SetActive(true);
         index = 0;
+        StopAllCoroutines();
         StartCoroutine(TypeLine());
 
     }
