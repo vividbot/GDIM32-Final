@@ -4,9 +4,10 @@ public class Quest : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected int score;
-    [SerializeField] int targetScore;
-    [SerializeField] string tagType;
-    void Start()
+    [SerializeField] protected int targetScore;
+    [SerializeField] protected string tagType;
+    [SerializeField] protected string questName;
+    public virtual void Start()
     {
         score = 0;
         Locator.Instance.objectCountUpdate += scoredPoint;

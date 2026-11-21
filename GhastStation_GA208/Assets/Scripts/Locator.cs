@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Specialized;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
@@ -14,6 +15,8 @@ public class Locator : MonoBehaviour
 
     public delegate void QuestTriggered(GameObject questName, Transform questLocation);
     public event QuestTriggered newQuestStarted;
+    public delegate void IncreaseTotalScore(string questName);
+    public event IncreaseTotalScore questCompleted;
 
 
     private void Awake()
@@ -32,7 +35,7 @@ public class Locator : MonoBehaviour
 
         PickUp = camera.GetComponent<PickupController>();
         Player = playerObj.GetComponent<PlayerScript>();
-        NPCInteract = NPC.GetComponent<Q_NPCInteract>();
+        // NPCInteract = NPC.GetComponent<Q_NPCInteract>();
     }
 
     public virtual void QuestObjectScored(int pointsScored, string QuestType)
@@ -49,5 +52,11 @@ public class Locator : MonoBehaviour
 
         Debug.Log("Locator Received Quest trigger input.");
         newQuestStarted.Invoke(questObject, location);
+    }
+
+    public virtual void finishQuest(string questName)
+    {
+        Debug.Log("Locator Recieved End quest Request");
+        questCompleted.Invoke(questName);
     }
 }

@@ -1,32 +1,19 @@
 using UnityEngine;
 
-public class Quest_Toilet : MonoBehaviour
+public class Quest_Toilet : Quest
 {
-
-
-    /// <summary>
-    /// Pretend for now there is logic here written to handle the plunger quest idk. 
-    /// 
-    /// 
-    /// Probably take info from quest zone script and locator, and add UI when this script is started,
-    /// Thinking store the score in the quest manager script?
-    /// 
-    /// figuring it out
-    /// </summary>
     public bool PlungerActive;
-    public static Quest_Toilet Instance { get; private set; }
-
-    void Start()
+    public override void Start()
     {
-        // PlungerActive = true;
-        // if(Instance != null && Instance == this)
-        // {
-        //     Destroy(this);
-        //     return;
-        // }
-
-        // Instance = this;
-
+        base.Start();
+        PlungerActive = true;
         Debug.Log("Toilet Quest is Active");
     }
+    public override void scoredPoint(int x, string tag)
+    {
+        base.scoredPoint(x, tag);
+        Debug.Log("Times Plunged: " + score);
+    }
+
+
 }
