@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Quest_Toilet : Quest
 {
-    public bool PlungerActive;
+    bool PlungerActive;
     public override void Start()
     {
         base.Start();
@@ -13,6 +13,13 @@ public class Quest_Toilet : Quest
     {
         base.scoredPoint(x, tag);
         Debug.Log("Times Plunged: " + score);
+
+        if(score == targetScore)
+        {
+            Debug.Log("You plunged the Toilet!");
+            Locator.Instance.finishQuest(questName);
+
+        }
     }
 
 

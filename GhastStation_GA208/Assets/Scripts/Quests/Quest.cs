@@ -23,6 +23,10 @@ public class Quest : MonoBehaviour
         // Ovveride logic depending on what you want to do with each method paramater. 
         
     }
+    public virtual void OnDisable()
+    {
+        Locator.Instance.objectCountUpdate -= scoredPoint;
+    }
 
 
 }

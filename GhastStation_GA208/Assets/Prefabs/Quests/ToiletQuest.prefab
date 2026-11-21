@@ -45,7 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ad5ffb6ada075044b5e7c66e319b3a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  PlungerActive: 0
+  targetScore: 30
+  tagType: PlungerItem
+  questName: Unclog Toilet
 --- !u!1 &1960010778277516523
 GameObject:
   m_ObjectHideFlags: 0

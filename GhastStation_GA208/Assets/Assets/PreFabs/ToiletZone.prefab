@@ -67,9 +67,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d785701607beea9469e43666338b0984, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::E_QuestZone
-  TagType: PlungerItem
+  tagType: PlungerItem
   TrackExit: 0
-  ScoreAmmount: 1
+  scoreAmmount: 1
 --- !u!1 &8169074413546789036
 GameObject:
   m_ObjectHideFlags: 0
