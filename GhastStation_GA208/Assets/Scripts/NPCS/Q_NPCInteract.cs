@@ -23,7 +23,7 @@ public class Q_NPCInteract : MonoBehaviour
     [Header("NPC Quest")]
     [SerializeField] private GameObject questObject;
     [SerializeField] private Transform questLocation;
-    private bool canGiveTask = true;
+    [SerializeField] private bool canGiveTask = true;
 
     [Header("Dialog Settings")]
     public string[] lines;
@@ -92,9 +92,9 @@ public class Q_NPCInteract : MonoBehaviour
 
     void StartDialog()
     {
+        Debug.Log("Meow");  
         dialogBox.SetActive(true);
         index = 0;
-        StopAllCoroutines();
         StartCoroutine(TypeLine());
 
     }
@@ -114,6 +114,7 @@ public class Q_NPCInteract : MonoBehaviour
 
     void EndDialog()
     {
+        StopCoroutine(TypeLine());
         dialogBox.SetActive(false);
         dialogText.text = string.Empty;
         ghostState = GhostTalkStates.NotTalking;
