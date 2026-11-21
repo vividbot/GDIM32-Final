@@ -75,7 +75,8 @@ public class PickupController : MonoBehaviour
 
             if(pickObject.CompareTag("Rat"))
             {
-                pickObject.GetComponent<SplineAnimate>().enabled = false;
+                //pickObject.GetComponent<SplineAnimate>().enabled = false;
+                pickObject.gameObject.tag = "GrabbedRat";
                 GrabbedRat?.Invoke();
             }
 
@@ -107,12 +108,7 @@ public class PickupController : MonoBehaviour
     {
         heldObjectRB.AddForce(transform.forward * throwForce);
         Debug.Log("thrown object");
-        heldObjectRB.useGravity = true;
-        heldObjectRB.linearDamping = 1;
-        heldObjectRB.constraints = RigidbodyConstraints.None;
-
-        heldObjectRB.transform.parent = null;
-        heldObject = null;
+        DropObject();
     }
 
     //https://www.youtube.com/watch?v=6bFCQqabfzo Utilized this tutorial, though I edited it every so slightly in terms of organization and some variables, also added the gizmo.
