@@ -11,14 +11,14 @@ public enum GhostTalkStates
 public class Q_NPCInteract : MonoBehaviour
 {
     public delegate void EmptyDelagate();
-    public event EmptyDelagate QuestAssigned; 
+    public event EmptyDelagate QuestAssigned;
 
-    private GhostTalkStates ghostState;
+    [SerializeField] private GhostTalkStates ghostState;
 
     [Header("Dialog Distance Variables")]
     [SerializeField] private float minTalkingDistance = 5f;
     [SerializeField] private bool isWithinTalkingDistance = false;
-
+    [SerializeField] private GameObject withinRangeIndicator;
 
     [Header("NPC Quest")]
     [SerializeField] private GameObject questObject;
@@ -50,19 +50,19 @@ public class Q_NPCInteract : MonoBehaviour
         if(Vector3.Distance(transform.position, playerPosition) <= minTalkingDistance)
         {
             isWithinTalkingDistance = true;
+            withinRangeIndicator.SetActive(true);
         }
         else
         {
             isWithinTalkingDistance = false;
-            ghostState = GhostTalkStates.NotTalking;
-            EndDialog();
+            withinRangeIndicator.SetActive(false);
         }
 
     }
 
     public void PlayerInteract()
     {
-        if (!isWithinTalkingDistance)
+        if (!isWithinTalkingDistance && ghostState == GhostTalkStates.NotTalking)
         {
             return;
         }
@@ -70,7 +70,6 @@ public class Q_NPCInteract : MonoBehaviour
         else if (isWithinTalkingDistance && ghostState == GhostTalkStates.NotTalking)
         {
             StartDialog();
-
             Debug.Log("talking to npc");
             ghostState = GhostTalkStates.Talking;
 
@@ -83,7 +82,7 @@ public class Q_NPCInteract : MonoBehaviour
             }
 
         }
-        else if(isWithinTalkingDistance && ghostState == GhostTalkStates.Talking)
+        else if(ghostState == GhostTalkStates.Talking)
         {
             NextLine();
         }
@@ -95,6 +94,8 @@ public class Q_NPCInteract : MonoBehaviour
         Debug.Log("Meow");  
         dialogBox.SetActive(true);
         index = 0;
+
+        StopCoroutine(TypeLine());
         StartCoroutine(TypeLine());
 
     }
@@ -114,7 +115,6 @@ public class Q_NPCInteract : MonoBehaviour
 
     void EndDialog()
     {
-        StopCoroutine(TypeLine());
         dialogBox.SetActive(false);
         dialogText.text = string.Empty;
         ghostState = GhostTalkStates.NotTalking;
