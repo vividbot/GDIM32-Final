@@ -26,7 +26,9 @@ public class Q_NPCInteract : MonoBehaviour
     [SerializeField] private bool canGiveTask = true;
 
     [Header("Dialog Settings")]
-    public string[] lines;
+
+    [SerializeField] private NPCDialog lines;
+    //string[] lines;
     [SerializeField] private float textSpeed;
     [SerializeField] private TextMeshProUGUI dialogText;
     [SerializeField] private GameObject dialogBox;
@@ -98,7 +100,7 @@ public class Q_NPCInteract : MonoBehaviour
     }
     void NextLine()
     {
-        if (index < lines.Length - 1)
+        if (index < lines.dialogLine.Length - 1)
         {
             index++;
             dialogText.text = string.Empty;
@@ -119,7 +121,7 @@ public class Q_NPCInteract : MonoBehaviour
 
     IEnumerator TypeLine()
     {
-        foreach (char c in lines[index].ToCharArray())
+        foreach (char c in lines.dialogLine[index].ToCharArray())
         {
             dialogText.text += c;
             yield return new WaitForSeconds(textSpeed);
