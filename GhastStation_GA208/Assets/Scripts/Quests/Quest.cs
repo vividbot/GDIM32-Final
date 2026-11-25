@@ -1,19 +1,26 @@
-using System;
 using UnityEngine;
+using TMPro;
+
 
 public class Quest : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected int score;
+
+    [Header("Basic Quest Paramaters")]
     [SerializeField] protected int targetScore;
-    [SerializeField] protected string tagType;
     [SerializeField] protected string questName;
-    [SerializeField] protected GameObject uiText;
+    [SerializeField] protected string tagType;
+    [Header("Quest UI Paramaters")]
+    [SerializeField] protected TextMeshProUGUI uiText;
+    [SerializeField] protected string questText;
+    [SerializeField] protected Transform canvasParent;
     public virtual void Start()
     {
         score = 0;
         Locator.Instance.objectCountUpdate += scoredPoint;
         UIStart();
+        Debug.Log("Starting Score" + score);
     }
 
     // Update is called once per frame
@@ -22,10 +29,25 @@ public class Quest : MonoBehaviour
         if(tagType == tag)
         {
             score += x;
+            uiText.text = questText + " " + score;
 
         }
         // Ovveride logic depending on what you want to do with each method paramater. 
         
+    }
+
+    public virtual void UIStart()
+    {
+        //Instantiates whatever UI Text or UI prefab is needed for each quest
+        //Can Be overridden if there are specific things needed to be done (IE Plunger quest has some sort of health bar thing)
+    
+        Instantiate(uiText, canvasParent, false);
+        uiText.text = questText + " " + score;
+    }
+    public virtual void UIStop()
+    {
+        DestroyImmediate(uiText, true);
+        //Removes UI From Canvas once Task is complete and script is Disabled
     }
     public virtual void OnDisable()
     {
@@ -34,15 +56,7 @@ public class Quest : MonoBehaviour
 
     }
 
-    public virtual void UIStart()
-    {
-        //Instantiates whatever UI Text or UI prefab is needed for each quest
-        //Can Be overridden if there are specific things needed to be done (IE Plunger quest has some sort of health bar thing)
-    }
-    public virtual void UIStop()
-    {
-        //Removes UI From Canvas once Task is complete and script is Disabled
-    }
+
 
 
 }

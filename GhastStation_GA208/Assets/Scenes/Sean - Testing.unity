@@ -246,6 +246,11 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!224 &412373715 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1212263326623651408, guid: a08bbf5eceda49d4b9e409cfe4c49646, type: 3}
+  m_PrefabInstance: {fileID: 5963745921180957234}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &472917545
 Mesh:
   m_ObjectHideFlags: 0
@@ -2618,12 +2623,16 @@ PrefabInstance:
       objectReference: {fileID: 637931386}
     - target: {fileID: 2708137591156797018, guid: c9354a59562504a4ebf2fd8a30193732, type: 3}
       propertyPath: m_VersionIndex
-      value: 3916
+      value: 3928
       objectReference: {fileID: 0}
     - target: {fileID: 3274477795796685887, guid: c9354a59562504a4ebf2fd8a30193732, type: 3}
       propertyPath: m_Name
       value: Restocking Quest
       objectReference: {fileID: 0}
+    - target: {fileID: 3890134118713971679, guid: c9354a59562504a4ebf2fd8a30193732, type: 3}
+      propertyPath: uiText
+      value: 
+      objectReference: {fileID: 9048498683620457944, guid: 3a43a2cadac19e648bdd52f7f4c729b5, type: 3}
     - target: {fileID: 3890134118713971679, guid: c9354a59562504a4ebf2fd8a30193732, type: 3}
       propertyPath: tagType
       value: RestockItem
@@ -2633,9 +2642,17 @@ PrefabInstance:
       value: 'Restocked Shelves '
       objectReference: {fileID: 0}
     - target: {fileID: 3890134118713971679, guid: c9354a59562504a4ebf2fd8a30193732, type: 3}
-      propertyPath: targetScore
-      value: 1
+      propertyPath: questText
+      value: Items Restocked
       objectReference: {fileID: 0}
+    - target: {fileID: 3890134118713971679, guid: c9354a59562504a4ebf2fd8a30193732, type: 3}
+      propertyPath: targetScore
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3890134118713971679, guid: c9354a59562504a4ebf2fd8a30193732, type: 3}
+      propertyPath: canvasParent
+      value: 
+      objectReference: {fileID: 412373715}
     - target: {fileID: 3890134118713971679, guid: c9354a59562504a4ebf2fd8a30193732, type: 3}
       propertyPath: restockingItemstoSpawn
       value: 
