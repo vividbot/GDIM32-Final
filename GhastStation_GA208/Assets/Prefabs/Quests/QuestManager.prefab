@@ -47,3 +47,5 @@ MonoBehaviour:
   testQuest: {fileID: 0}
   testQuestLocation: {fileID: 0}
   TriggerQuestInspector: 0
+  questsToWin: 3
+  questListText: {fileID: 0}

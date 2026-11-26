@@ -31,7 +31,6 @@ public class Quest : MonoBehaviour
             score += x;
             
             uiText.text = questText + " " + score;
-            Debug.Log("test"); 
 
         }
         // Ovveride logic depending on what you want to do with each method paramater. 
