@@ -38,23 +38,18 @@ public class PlayerScript : MonoBehaviour
             Locator.Instance.TriggerQuest(QuestToSpawn, QuestPosition);
         }
 
-        // Player interact
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Interacted?.Invoke();
-        }
-
-    }
-
-    private void FixedUpdate()
-    {
         // Handle Player movement
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
         Vector3 move = transform.right * x + transform.forward * z;
-
         controller.SimpleMove(move * moveSpeed * Time.deltaTime);
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Interacted?.Invoke();
+        }
+
     }
 
 }
