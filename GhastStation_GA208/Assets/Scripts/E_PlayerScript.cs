@@ -47,9 +47,6 @@ public class PlayerScript : MonoBehaviour
             Locator.Instance.TriggerQuest(QuestToSpawn, QuestPosition);
         }
 
-        Debug.Log(horizontalMovement);
-        Debug.Log(verticalMovement);
-
         if (Input.GetKeyDown(KeyCode.E))
         {
             Interacted?.Invoke();
