@@ -8,10 +8,13 @@ public class PlayerScript : MonoBehaviour
     public delegate void EmptyDelagate();
     public event EmptyDelagate Interacted;
 
-    [SerializeField] private float moveSpeed = 10.0f; 
+    [SerializeField] private float moveSpeed = 10.0f;
+    [SerializeField] private float groundDrag;
     [SerializeField] private float webSpeedMultiplier = 0.5f;
+    private Rigidbody rb;
 
-    private CharacterController controller;   
+    private float horizontalMovement;
+    private float verticalMovement;
 
 
     //Testing stuff
@@ -24,26 +27,28 @@ public class PlayerScript : MonoBehaviour
         #if UNITY_WEBGL
         moveSpeed *= webSpeedMultiplier;
         #endif
-        controller = GetComponent<CharacterController>();
+        //controller = GetComponent<CharacterController>();
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        //Test Quest Triggering
+        // Handle Player movement
+        horizontalMovement = Input.GetAxis("Horizontal");
+        verticalMovement = Input.GetAxis("Vertical");
 
+        rb.linearDamping = groundDrag;
+
+        //Test Quest Triggering
         if (Input.GetKeyDown(KeyCode.T))
         {
             Locator.Instance.TriggerQuest(QuestToSpawn, QuestPosition);
         }
 
-        // Handle Player movement
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-
-        Vector3 move = transform.right * x + transform.forward * z;
-        controller.SimpleMove(move * moveSpeed * Time.deltaTime);
+        Debug.Log(horizontalMovement);
+        Debug.Log(verticalMovement);
 
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -52,4 +57,10 @@ public class PlayerScript : MonoBehaviour
 
     }
 
+    private void FixedUpdate()
+    {
+        Vector3 move = transform.right * horizontalMovement + transform.forward * verticalMovement;
+
+        rb.AddForce(move.normalized * moveSpeed, ForceMode.Force);
+    }
 }

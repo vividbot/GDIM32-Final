@@ -9,6 +9,7 @@ public class MouseLook : MonoBehaviour
     private float xRotation = 0f;
     private float mouseX;
     private float mouseY;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,7 +17,6 @@ public class MouseLook : MonoBehaviour
         Cursor.visible = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         mouseX = Input.GetAxis("Mouse X") * mouseSens * Time.deltaTime;
@@ -27,7 +27,6 @@ public class MouseLook : MonoBehaviour
 
         playerBody.Rotate(Vector3.up * mouseX);
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-
     }
 
 }

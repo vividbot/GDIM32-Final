@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4281471816585839185}
   - component: {fileID: 4794714392185278533}
-  - component: {fileID: 8888148547723255501}
+  - component: {fileID: 2735776786680954713}
+  - component: {fileID: 5600106124922612109}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -46,9 +47,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ab7aaf4fd8579842840328b825bc4f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  moveSpeed: 8
---- !u!143 &8888148547723255501
-CharacterController:
+  moveSpeed: 120
+  groundDrag: 10
+  webSpeedMultiplier: 0.5
+  QuestToSpawn: {fileID: 0}
+  QuestPosition: {fileID: 0}
+--- !u!54 &2735776786680954713
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3255302236957638701}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 80
+  m_CollisionDetection: 1
+--- !u!136 &5600106124922612109
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -62,16 +94,14 @@ CharacterController:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 2
+  serializedVersion: 2
   m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Height: 2.085367
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.124816775, z: 0}
 --- !u!1 &6568615942658258461
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,11 +270,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PickupController
   IgnoreMe:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 192
   holdArea: {fileID: 5679810705064650201}
   pickUpRange: 3
   pickUpForce: 100
   pickUpStiffness: 20
+  throwForce: 300
 --- !u!1 &9112523237561078471
 GameObject:
   m_ObjectHideFlags: 0
