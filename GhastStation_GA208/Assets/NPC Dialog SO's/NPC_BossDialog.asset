@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb324e35a236d544e8783639b106460f, type: 3}
   m_Name: NPC_BossDialog
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialog
-  dialogLine:
-  - Hey, What are you still doing in here? It's not your break!
-  - There's a customer out at the counter. Go talk to them to see what they want.
-  - Cough cough do your job cough cough
+  taskAssignedDialog:
+  - What are you still doing in the break room?? It's not your break yet, man.
+  - There's a customer waiting out by the counter. I think they need something. Why
+    don't you go talk to them, huh?
+  - Cough cough - doyourjob - cough cough.
+  taskCompletedDialog: []

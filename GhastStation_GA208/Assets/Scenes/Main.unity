@@ -6372,11 +6372,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!1 &273730553 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3456008259426125461, guid: 60170c6c2b45e724aa5c3ef75dc2e99b, type: 3}
-  m_PrefabInstance: {fileID: 1429203642}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &276666854
 GameObject:
   m_ObjectHideFlags: 0
@@ -18478,7 +18473,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4281471816585839185, guid: 308e7600bcbd38843a47e21e4151fc29, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -38.58
+      value: -27.165
       objectReference: {fileID: 0}
     - target: {fileID: 4281471816585839185, guid: 308e7600bcbd38843a47e21e4151fc29, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18486,7 +18481,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4281471816585839185, guid: 308e7600bcbd38843a47e21e4151fc29, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 11.32
+      value: 4.883
       objectReference: {fileID: 0}
     - target: {fileID: 4281471816585839185, guid: 308e7600bcbd38843a47e21e4151fc29, type: 3}
       propertyPath: m_LocalRotation.w
@@ -18518,7 +18513,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4794714392185278533, guid: 308e7600bcbd38843a47e21e4151fc29, type: 3}
       propertyPath: moveSpeed
-      value: 125
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 4794714392185278533, guid: 308e7600bcbd38843a47e21e4151fc29, type: 3}
       propertyPath: QuestToSpawn
@@ -22732,7 +22727,19 @@ PrefabInstance:
     - target: {fileID: 904548063559481853, guid: 3283b3d40bf11a54db5fb2355c01e7ea, type: 3}
       propertyPath: questObject
       value: 
-      objectReference: {fileID: 273730553}
+      objectReference: {fileID: 751016178379675329, guid: be4179f2cea76e74384374b3c7482f59, type: 3}
+    - target: {fileID: 904548063559481853, guid: 3283b3d40bf11a54db5fb2355c01e7ea, type: 3}
+      propertyPath: toiletQuest
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 904548063559481853, guid: 3283b3d40bf11a54db5fb2355c01e7ea, type: 3}
+      propertyPath: isPlungerTask
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 904548063559481853, guid: 3283b3d40bf11a54db5fb2355c01e7ea, type: 3}
+      propertyPath: questAssigned
+      value: Unclog Toilet
+      objectReference: {fileID: 0}
     - target: {fileID: 904548063559481853, guid: 3283b3d40bf11a54db5fb2355c01e7ea, type: 3}
       propertyPath: questLocation
       value: 
@@ -34580,7 +34587,7 @@ Transform:
   m_GameObject: {fileID: 1789890258}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.14634645, z: -0, w: 0.98923343}
-  m_LocalPosition: {x: -19.087, y: 0.131, z: 13.051}
+  m_LocalPosition: {x: -19.087, y: 0.944, z: 13.051}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -38308,6 +38315,10 @@ PrefabInstance:
       propertyPath: dialogText
       value: 
       objectReference: {fileID: 671843660}
+    - target: {fileID: 904548063559481853, guid: 3283b3d40bf11a54db5fb2355c01e7ea, type: 3}
+      propertyPath: questAssigned
+      value: 'Restocked Shelves '
+      objectReference: {fileID: 0}
     - target: {fileID: 904548063559481853, guid: 3283b3d40bf11a54db5fb2355c01e7ea, type: 3}
       propertyPath: questLocation
       value: 

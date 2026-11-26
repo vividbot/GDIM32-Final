@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb324e35a236d544e8783639b106460f, type: 3}
   m_Name: NPC_GhostGettingGas
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialog
-  dialogLine:
-  - Ummmm hello! Can I help you?
-  - ...No?
-  - You just want to watch me get gas?
-  - Um... Okay. You can do that. I guess.
+  taskAssignedDialog:
+  - Oh, hello. I'm just filling up my car.
+  - ...Can I help you? This isn't one of those gas stations where the employee needs
+    to fill up your car for you, right?
+  - 'No? Okay, good. '
   - ...
-  - ...
-  - Big tank. Um. I think there's a customer inside. You should probably help them.
+  - So uh. Why are you still here?
+  - Um... Okay. You can watch me fill up my gas tank. I guess.
+  taskCompletedDialog: []

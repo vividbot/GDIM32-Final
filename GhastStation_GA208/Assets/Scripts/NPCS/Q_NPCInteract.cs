@@ -23,14 +23,14 @@ public class Q_NPCInteract : MonoBehaviour
     [Header("NPC Quest")]
     [SerializeField] private GameObject questObject;
     [SerializeField] private Transform questLocation;
-    [SerializeField] private GameObject toiletQuest;
+    [SerializeField] private string questAssigned;
     [SerializeField] private bool canGiveTask = true;
-    [SerializeField] private bool isPlungerTask = false;
+    [SerializeField] private bool taskCompleted = false;
 
     [Header("Dialog Settings")]
 
     [SerializeField] private NPCDialog lines;
-    //string[] lines;
+    [SerializeField] private string[] currentLines;
     [SerializeField] private float textSpeed;
     [SerializeField] private TextMeshProUGUI dialogText;
     [SerializeField] private GameObject dialogBox;
@@ -42,7 +42,12 @@ public class Q_NPCInteract : MonoBehaviour
     void Start()
     {
         Locator.Instance.Player.Interacted += PlayerInteract;
+        Locator.Instance.questCompleted += NPCTaskCompleted;
+
         ghostState = GhostTalkStates.NotTalking;
+
+        currentLines = lines.taskAssignedDialog;
+
         dialogText.text = string.Empty;
     }
 
@@ -73,6 +78,7 @@ public class Q_NPCInteract : MonoBehaviour
 
         else if (isWithinTalkingDistance && ghostState == GhostTalkStates.NotTalking)
         {
+            UpdateLines();
             StartDialog();
             ghostState = GhostTalkStates.Talking;
 
@@ -81,15 +87,12 @@ public class Q_NPCInteract : MonoBehaviour
                 Locator.Instance.TriggerQuest(questObject, questLocation);
                 QuestAssigned?.Invoke();
                 canGiveTask = false;
-                if(isPlungerTask)
-                {
-                    Instantiate(toiletQuest);
-                }
             }
 
         }
         else if(ghostState == GhostTalkStates.Talking)
         {
+            StopAllCoroutines();
             NextLine();
         }
 
@@ -100,13 +103,12 @@ public class Q_NPCInteract : MonoBehaviour
         dialogBox.SetActive(true);
         index = 0;
 
-        StopCoroutine(TypeLine());
         StartCoroutine(TypeLine());
 
     }
     void NextLine()
     {
-        if (index < lines.dialogLine.Length - 1)
+        if (index < currentLines.Length - 1)
         {
             index++;
             dialogText.text = string.Empty;
@@ -127,10 +129,31 @@ public class Q_NPCInteract : MonoBehaviour
 
     IEnumerator TypeLine()
     {
-        foreach (char c in lines.dialogLine[index].ToCharArray())
+        foreach (char c in currentLines[index].ToCharArray())
         {
             dialogText.text += c;
             yield return new WaitForSeconds(textSpeed);
         }
     }
+
+    void UpdateLines()
+    {
+        if(!taskCompleted)
+        {
+            currentLines = lines.taskAssignedDialog;
+        }
+        else if(taskCompleted)
+        {
+            currentLines = lines.taskCompletedDialog;
+        }
+    }
+
+    void NPCTaskCompleted(string questName)
+    {
+        if(questName == questAssigned)
+        {
+            taskCompleted = true;
+        }
+    }
+
 }

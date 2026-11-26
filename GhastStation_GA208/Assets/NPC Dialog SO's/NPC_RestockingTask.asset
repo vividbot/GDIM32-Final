@@ -12,7 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb324e35a236d544e8783639b106460f, type: 3}
   m_Name: NPC_RestockingTask
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialog
-  dialogLine:
-  - Hey, umm, gas station guy?
-  - Those items are like soooo unstocked. Can you, like, stock them?
-  - Gosh...
+  taskAssignedDialog:
+  - Hey, those shelves are like completely unstocked.
+  - Went to grab my favorite bag of chips, only to be met with a box of them on the
+    floor.
+  - Do you expect me to BEND DOWN to grab them? What if I just had back surgery???
+  - ...I didn't have back surgery. But what if I did? Uncouth.
+  taskCompletedDialog:
+  - Wow, the shelves look so nice and organized now...
+  - Thank you! I guess. I'm going to leave without buying anything now.
