@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using UnityEngine.Assemblies;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -35,9 +36,18 @@ public class PlayerScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.T))
         {
             Locator.Instance.TriggerQuest(QuestToSpawn, QuestPosition);
-            
         }
 
+        // Player interact
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Interacted?.Invoke();
+        }
+
+    }
+
+    private void FixedUpdate()
+    {
         // Handle Player movement
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
@@ -45,12 +55,6 @@ public class PlayerScript : MonoBehaviour
         Vector3 move = transform.right * x + transform.forward * z;
 
         controller.SimpleMove(move * moveSpeed * Time.deltaTime);
-
-        if(Input.GetKeyDown(KeyCode.E))
-        {
-            Interacted?.Invoke();
-        }
-
     }
 
 }

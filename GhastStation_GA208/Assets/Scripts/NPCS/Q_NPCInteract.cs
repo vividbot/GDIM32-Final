@@ -35,7 +35,7 @@ public class Q_NPCInteract : MonoBehaviour
     private int index;
 
     //player vector
-    private Vector3 playerPosition;
+    public Vector3 playerPosition;
 
     void Start()
     {

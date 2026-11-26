@@ -485,7 +485,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4794714392185278533, guid: 308e7600bcbd38843a47e21e4151fc29, type: 3}
       propertyPath: moveSpeed
-      value: 3000
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 7130132187232285164, guid: 308e7600bcbd38843a47e21e4151fc29, type: 3}
       propertyPath: throwForce
@@ -556,6 +556,10 @@ PrefabInstance:
       propertyPath: dialogText
       value: 
       objectReference: {fileID: 1233918224}
+    - target: {fileID: 904548063559481853, guid: 3283b3d40bf11a54db5fb2355c01e7ea, type: 3}
+      propertyPath: questObject
+      value: 
+      objectReference: {fileID: 751016178379675329, guid: be4179f2cea76e74384374b3c7482f59, type: 3}
     - target: {fileID: 904548063559481853, guid: 3283b3d40bf11a54db5fb2355c01e7ea, type: 3}
       propertyPath: questLocation
       value: 
