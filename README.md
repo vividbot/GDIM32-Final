@@ -29,6 +29,13 @@ So far we are fairly far along the way of our planned features, At the momment N
 #### Prompt 2
 In our game, we're using ScriptableObjects for the NPC dialog. Using a SO that holds an array of strings named "NPCDialog", we can enter each line of dialog the NPC says, which is then used in the class Q_NPCInteract, which then cycles through the lines of dialog given to the NPC from the SO after the player presses "E" within a certain range of the player. This makes it very easy to organize which NPC will say what, as well as remain easily editable without needing to hunt down the NPC who's dialog you're trying to edit. Alongside this, this allows us to create basic dialog options for specific NPCS, such as NPCS that will always give the player a plunging task or NPCS that will always give the player a restocking task. This prevents us from needing to constantly rewrite dialog for NPCS or needing to come up with new uneccesary dialog for tasks that already have dialog associated with them
 
+### Individual Devlogs
+### Sjofn Quist
+I wrote all of the NPC scripts, created the level design, and refactored some previous code regarding the Player Movement to switch it from using the Character Controller component to a rigidbody component as it was causing some bugs. Alongside this, I also tried to stay on top of bug fixes throughout the week and squashed a couple of them.
+
+It takes me a while to finish a task, longer than I would generally like as I believe my ability to read code isn't all there yet. I generally struggle with some of my "code comprehension" and oftentimes I need to google things as I go along to remember where to put things and what specifically things do. I feel like the only real way to improve upon this skill is to simply code more and spend more time reading it, which is what I've been doing. Alongisde this project, I've been adding more things to my senior port project and contributing to some friend's projects just so I can sink more time into this skill, and I am seeing some improvement with my ability to actually understand what I'm reading. I have a habit of OVER-estimating how long tasks will take me, though, and at times I've found myself literally running out of things to do because I inadvertantly take "smaller" tasks that don't take me as long as I expected them to. I honestly do this with most subjects, and what I've found helps me the most is breaking tasks into a bunch of smaller tasks I /know/ won't take me very long, so i'm more comfortable taking multiple at a time and overall getting more done in my work time without floundering as I realize I finished my "main" task of the day.
+
+### Sean Elston
 
 ## Final Submission
 ### Group Devlog
