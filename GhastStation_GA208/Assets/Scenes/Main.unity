@@ -11129,6 +11129,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 904548063559481853, guid: 3283b3d40bf11a54db5fb2355c01e7ea, type: 3}
+      propertyPath: lines
+      value: 
+      objectReference: {fileID: 11400000, guid: 44a16807b45263846a2731c0a8902c33, type: 2}
+    - target: {fileID: 904548063559481853, guid: 3283b3d40bf11a54db5fb2355c01e7ea, type: 3}
       propertyPath: dialogBox
       value: 
       objectReference: {fileID: 1316352868}
@@ -18457,7 +18461,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4794714392185278533, guid: 308e7600bcbd38843a47e21e4151fc29, type: 3}
       propertyPath: moveSpeed
-      value: 1500
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 5679810705064650201, guid: 308e7600bcbd38843a47e21e4151fc29, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18512,6 +18516,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 904548063559481853, guid: 3283b3d40bf11a54db5fb2355c01e7ea, type: 3}
+      propertyPath: lines
+      value: 
+      objectReference: {fileID: 11400000, guid: db53b877cca46c54db658fbbfec3aba3, type: 2}
     - target: {fileID: 904548063559481853, guid: 3283b3d40bf11a54db5fb2355c01e7ea, type: 3}
       propertyPath: dialogBox
       value: 
@@ -38010,6 +38018,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Test_NPC
       objectReference: {fileID: 0}
+    - target: {fileID: 904548063559481853, guid: 3283b3d40bf11a54db5fb2355c01e7ea, type: 3}
+      propertyPath: lines
+      value: 
+      objectReference: {fileID: 11400000, guid: 0ecfb2efcb7bc6046a10bd94b049c8ce, type: 2}
     - target: {fileID: 904548063559481853, guid: 3283b3d40bf11a54db5fb2355c01e7ea, type: 3}
       propertyPath: dialogBox
       value: 
