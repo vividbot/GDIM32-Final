@@ -45,9 +45,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ad5ffb6ada075044b5e7c66e319b3a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  targetScore: 30
-  tagType: PlungerItem
+  targetScore: 5
   questName: Unclog Toilet
+  tagType: PlungerItem
+  uiTextPreFab: {fileID: 7843272109967895798, guid: f15f1d37b9469ea4db2a7069c08bc4b1, type: 3}
+  questText: Times Plunged
+  canvasParent: {fileID: 0}
 --- !u!1 &1960010778277516523
 GameObject:
   m_ObjectHideFlags: 0

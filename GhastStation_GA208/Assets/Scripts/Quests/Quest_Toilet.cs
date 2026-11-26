@@ -18,6 +18,8 @@ public class Quest_Toilet : Quest
         {
             Debug.Log("You plunged the Toilet!");
             Locator.Instance.finishQuest(questName);
+            
+            
 
         }
     }

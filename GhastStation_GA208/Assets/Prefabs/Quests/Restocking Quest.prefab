@@ -493,7 +493,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3898
+  m_VersionIndex: 3949
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -757,6 +757,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac5a1ada85ac25049bdce20dbf373be8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  targetScore: 10
-  tagType: 
-  restockingItemstoSpawn: {fileID: 0}
+  targetScore: 6
+  questName: 'Restocked Shelves '
+  tagType: RestockItem
+  uiTextPreFab: {fileID: 7843272109967895798, guid: f15f1d37b9469ea4db2a7069c08bc4b1, type: 3}
+  questText: Items Restocked
+  canvasParent: {fileID: 0}
+  restockingItemstoSpawn: {fileID: 854213191435119099, guid: ab2c351ac1984184288c48a503bf9caa, type: 3}

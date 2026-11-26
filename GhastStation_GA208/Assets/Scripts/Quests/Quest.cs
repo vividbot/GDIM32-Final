@@ -4,7 +4,6 @@ using TMPro;
 
 public class Quest : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected int score;
 
     [Header("Basic Quest Paramaters")]
@@ -12,9 +11,10 @@ public class Quest : MonoBehaviour
     [SerializeField] protected string questName;
     [SerializeField] protected string tagType;
     [Header("Quest UI Paramaters")]
-    [SerializeField] protected TextMeshProUGUI uiText;
+    [SerializeField] protected TextMeshProUGUI uiTextPreFab;
+    protected TextMeshProUGUI uiText;
     [SerializeField] protected string questText;
-    [SerializeField] protected Transform canvasParent;
+    protected GameObject canvasParent;
     public virtual void Start()
     {
         score = 0;
@@ -29,7 +29,9 @@ public class Quest : MonoBehaviour
         if(tagType == tag)
         {
             score += x;
+            
             uiText.text = questText + " " + score;
+            Debug.Log("test"); 
 
         }
         // Ovveride logic depending on what you want to do with each method paramater. 
@@ -40,13 +42,14 @@ public class Quest : MonoBehaviour
     {
         //Instantiates whatever UI Text or UI prefab is needed for each quest
         //Can Be overridden if there are specific things needed to be done (IE Plunger quest has some sort of health bar thing)
-    
-        Instantiate(uiText, canvasParent, false);
+        canvasParent = GameObject.FindWithTag("Canvas");
+        uiText = Instantiate(uiTextPreFab, canvasParent.transform, false);
+        // Instantiate(uiText, canvasParent, false);
         uiText.text = questText + " " + score;
     }
     public virtual void UIStop()
     {
-        DestroyImmediate(uiText, true);
+        Destroy(uiText);
         //Removes UI From Canvas once Task is complete and script is Disabled
     }
     public virtual void OnDisable()
