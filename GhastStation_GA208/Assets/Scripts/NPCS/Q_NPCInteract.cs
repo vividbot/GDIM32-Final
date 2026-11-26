@@ -23,7 +23,9 @@ public class Q_NPCInteract : MonoBehaviour
     [Header("NPC Quest")]
     [SerializeField] private GameObject questObject;
     [SerializeField] private Transform questLocation;
+    [SerializeField] private GameObject toiletQuest;
     [SerializeField] private bool canGiveTask = true;
+    [SerializeField] private bool isPlungerTask = false;
 
     [Header("Dialog Settings")]
 
@@ -79,6 +81,10 @@ public class Q_NPCInteract : MonoBehaviour
                 Locator.Instance.TriggerQuest(questObject, questLocation);
                 QuestAssigned?.Invoke();
                 canGiveTask = false;
+                if(isPlungerTask)
+                {
+                    Instantiate(toiletQuest);
+                }
             }
 
         }

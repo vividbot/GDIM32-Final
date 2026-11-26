@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb324e35a236d544e8783639b106460f, type: 3}
+  m_Name: NPC_Plungertask
+  m_EditorClassIdentifier: Assembly-CSharp::NPCDialog
+  dialogLine:
+  - Yo I your toilet is COMPLETELEY clogged.
+  - I OBVIOUSLY don't know why. Why are you looking at me like that? I would never
+    have anything to do with something like this.
+  - Just like. Unclog the toilet please. Thanks.
