@@ -32,7 +32,7 @@ public class E_QuestManager : MonoBehaviour
         {
             TriggerQuest(testQuest, testQuestLocation);
         }
-        if(questsCompleted == questsToWin && Input.GetKeyDown("x"))
+        if(questsCompleted >= questsToWin && Input.GetKeyDown("x"))
         {
             // UnityEditor.EditorApplication.isPlaying = false;
             SceneManager.LoadScene("EndScreen");
@@ -59,7 +59,7 @@ public class E_QuestManager : MonoBehaviour
             Debug.Log(x.ToString());
         }
 
-        if(questsCompleted == questsToWin)
+        if(questsCompleted >= questsToWin)
         {
             Debug.Log("Your shift is over!");
             shiftOverText.SetActive(true);
