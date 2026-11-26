@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ab7aaf4fd8579842840328b825bc4f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  moveSpeed: 200
+  moveSpeed: 3000
   groundDrag: 15
   webSpeedMultiplier: 0.5
   QuestToSpawn: {fileID: 0}
@@ -254,7 +254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5ddf0c933f36fa4d98fed195814e773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  mouseSens: 400
+  mouseSens: 200
   playerBody: {fileID: 4281471816585839185}
 --- !u!114 &7130132187232285164
 MonoBehaviour:
@@ -270,12 +270,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PickupController
   IgnoreMe:
     serializedVersion: 2
-    m_Bits: 192
+    m_Bits: 68
   holdArea: {fileID: 5679810705064650201}
   pickUpRange: 3
   pickUpForce: 100
-  pickUpStiffness: 20
-  throwForce: 300
+  pickUpStiffness: 10
+  throwForce: 10
 --- !u!1 &9112523237561078471
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,7 +301,7 @@ Transform:
   m_GameObject: {fileID: 9112523237561078471}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2.24}
+  m_LocalPosition: {x: 0, y: 0, z: 1.833}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

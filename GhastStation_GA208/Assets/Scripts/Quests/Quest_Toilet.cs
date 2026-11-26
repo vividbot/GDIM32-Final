@@ -10,7 +10,7 @@ public class Quest_Toilet : Quest
         base.Start();
         Debug.Log("Toilet Quest is Active");
         plungerPositon = GameObject.Find("Plunger");
-        plungerPositon.transform.position = transform.position + new Vector3 (0, 3, 0);
+        plungerPositon.transform.position = transform.position + new Vector3 (0, 1, 0);
     }
     public override void scoredPoint(int x, string tag)
     {

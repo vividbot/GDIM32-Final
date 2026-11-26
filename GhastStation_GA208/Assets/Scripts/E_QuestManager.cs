@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class E_QuestManager : MonoBehaviour
 {
@@ -33,7 +34,8 @@ public class E_QuestManager : MonoBehaviour
         }
         if(questsCompleted == questsToWin && Input.GetKeyDown("x"))
         {
-            UnityEditor.EditorApplication.isPlaying = false;
+            // UnityEditor.EditorApplication.isPlaying = false;
+            SceneManager.LoadScene("EndScreen");
         }
     }
 
