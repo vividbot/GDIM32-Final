@@ -12,11 +12,13 @@ public class E_QuestManager : MonoBehaviour
     int questsCompleted;
     [SerializeField] int questsToWin;
     [SerializeField] TextMeshProUGUI questListText;
+    [SerializeField] GameObject shiftOverText;
     
 
     List<string> questList = new List<string>();
     void Start()
     {
+
         questListText.text = "";
         questsCompleted = 0;
         Locator.Instance.newQuestStarted += TriggerQuest;
@@ -28,6 +30,10 @@ public class E_QuestManager : MonoBehaviour
         if(TriggerQuestInspector == true)
         {
             TriggerQuest(testQuest, testQuestLocation);
+        }
+        if(questsCompleted == questsToWin && Input.GetKeyDown("x"))
+        {
+            UnityEditor.EditorApplication.isPlaying = false;
         }
     }
 
@@ -50,14 +56,11 @@ public class E_QuestManager : MonoBehaviour
         {
             Debug.Log(x.ToString());
         }
-        
-
 
         if(questsCompleted == questsToWin)
         {
             Debug.Log("Your shift is over!");
-            UnityEditor.EditorApplication.isPlaying = false;
-            
+            shiftOverText.SetActive(true);
         }
     }
 }
