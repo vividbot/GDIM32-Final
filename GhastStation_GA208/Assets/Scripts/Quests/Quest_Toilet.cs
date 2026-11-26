@@ -1,13 +1,16 @@
+using Unity.Mathematics;
 using UnityEngine;
 
 public class Quest_Toilet : Quest
 {
-    bool PlungerActive;
+
+    GameObject plungerPositon;
     public override void Start()
     {
         base.Start();
-        PlungerActive = true;
         Debug.Log("Toilet Quest is Active");
+        plungerPositon = GameObject.Find("Plunger");
+        plungerPositon.transform.position = transform.position + new Vector3 (0, 3, 0);
     }
     public override void scoredPoint(int x, string tag)
     {
@@ -18,8 +21,7 @@ public class Quest_Toilet : Quest
         {
             Debug.Log("You plunged the Toilet!");
             Locator.Instance.finishQuest(questName);
-            
-            
+            Destroy(gameObject);
 
         }
     }

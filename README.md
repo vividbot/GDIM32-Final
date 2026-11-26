@@ -29,6 +29,11 @@ So far we are fairly far along the way of our planned features, At the momment N
 #### Prompt 2
 In our game, we're using ScriptableObjects for the NPC dialog. Using a SO that holds an array of strings named "NPCDialog", we can enter each line of dialog the NPC says, which is then used in the class Q_NPCInteract, which then cycles through the lines of dialog given to the NPC from the SO after the player presses "E" within a certain range of the player. This makes it very easy to organize which NPC will say what, as well as remain easily editable without needing to hunt down the NPC who's dialog you're trying to edit. Alongside this, this allows us to create basic dialog options for specific NPCS, such as NPCS that will always give the player a plunging task or NPCS that will always give the player a restocking task. This prevents us from needing to constantly rewrite dialog for NPCS or needing to come up with new uneccesary dialog for tasks that already have dialog associated with them
 
+### Individual Devlogs
+### Sean Elston
+#### Prompt 1
+For this portion of the project I have contributed the 
+
 
 ## Final Submission
 ### Group Devlog

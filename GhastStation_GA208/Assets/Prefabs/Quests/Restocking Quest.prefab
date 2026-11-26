@@ -35,7 +35,7 @@ Transform:
   m_GameObject: {fileID: 783161592057004679}
   serializedVersion: 2
   m_LocalRotation: {x: 1.110223e-17, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.662, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -561,7 +561,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 2
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -762,5 +762,4 @@ MonoBehaviour:
   tagType: RestockItem
   uiTextPreFab: {fileID: 7843272109967895798, guid: f15f1d37b9469ea4db2a7069c08bc4b1, type: 3}
   questText: Items Restocked
-  canvasParent: {fileID: 0}
   restockingItemstoSpawn: {fileID: 854213191435119099, guid: ab2c351ac1984184288c48a503bf9caa, type: 3}
