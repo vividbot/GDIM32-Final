@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3347119064572264091
 Transform:
   m_ObjectHideFlags: 0
@@ -26,8 +26,8 @@ Transform:
   m_GameObject: {fileID: 538572644282779709}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.02, y: 0.939, z: -0.2}
-  m_LocalScale: {x: 0.67036074, y: 0.14226614, z: 1}
+  m_LocalPosition: {x: 1.13, y: 0.939, z: 0}
+  m_LocalScale: {x: -0.10728, y: 0.10728, z: 0.10728}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6114701761591661704}
@@ -81,8 +81,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 6c2f19a121eb01348a913428674d9c7d, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -145,11 +145,15 @@ MonoBehaviour:
   withinRangeIndicator: {fileID: 538572644282779709}
   questObject: {fileID: 3274477795796685887, guid: c9354a59562504a4ebf2fd8a30193732, type: 3}
   questLocation: {fileID: 0}
+  questAssigned: 
   canGiveTask: 1
+  taskCompleted: 0
   lines: {fileID: 0}
+  currentLines: []
   textSpeed: 0
   dialogText: {fileID: 0}
   dialogBox: {fileID: 0}
+  playerPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &5777387594254708209
 MonoBehaviour:
   m_ObjectHideFlags: 0

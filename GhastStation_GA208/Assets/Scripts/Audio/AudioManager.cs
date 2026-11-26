@@ -3,7 +3,6 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     [Header("Quest Audio")]
-
     [SerializeField] AudioSource questAssignedAudio;
 
 
@@ -13,6 +12,8 @@ public class AudioManager : MonoBehaviour
     }
     void PlayQuestAssigned()
     {
+        Debug.Log("play quest sound");
+
         questAssignedAudio.Play();
     }
 

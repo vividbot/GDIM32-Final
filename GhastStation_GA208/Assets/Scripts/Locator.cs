@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Specialized;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 
@@ -35,6 +36,7 @@ public class Locator : MonoBehaviour
 
         PickUp = camera.GetComponent<PickupController>();
         Player = playerObj.GetComponent<PlayerScript>();
+        NPCInteract = NPC.GetComponent<Q_NPCInteract>();
     }
 
     public virtual void QuestObjectScored(int pointsScored, string QuestType)
