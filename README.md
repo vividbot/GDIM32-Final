@@ -32,9 +32,13 @@ In our game, we're using ScriptableObjects for the NPC dialog. Using a SO that h
 ### Individual Devlogs
 ### Sean Elston
 #### Prompt 1
-For this portion of the project I have contributed the 
+For this portion of the project I have contributed creating and completing the quest logic within the game. As well as the UI blockout showing the player which quest is active, along with how many quests they have completed, and if the game is over. Additionally I created the logic to both end and restart the game whenever the player completes all of the required quests. I worked on and created a few diffrent classes during this stretch of the project. I worked on making the QuestManager class fully functional to Instantiate and start quests, and then I created the "Quest" parent class, which each individual quest inherits from. The parent class outlines some basic behaviours (IE subscribing to the Locator to receive score events from the QuestZone class) additionally it outlines basic scoring structure, and basic UI spawning structure so that each quest will spawn some sort of UI when it is started. I also created children of the Quest class for each quest, these have overriden methods from the base class based on what the specifc needs are for the quest but stay relativley similar to the parent class.
+#### Prompt 2
+I think that I often underestimated how long certain things would take as well as overestimated certain tasks depending on the perceived complexity of each task. I think that as I code more and more I am starting to get a better understanding of how certain architectures will be constructed for games and have a better understanding of what to start with. A lot of the time I start with an idea on how ot structure somthing but as I start building it seems becomes more complicated than I initially estimated, mostly due to running into new logic challenges I hadnt anticipated when I was starting the task. On the other hand certain tasks were easier to complete than I had initially thought, for example I was expecting to spend a long time creating the list function to list which tasks had been completed, and thought it was a fairly complicated concept to create. But after starting I realized it was far easier than it seemed after consulting the unity documentation on lists and how to add those lists to text. I think that my estimates overall were fairly close to being accurate, if not having some leeway in either direction of taking too long or finishing early on certain tasks. 
 
+I think now that I have more experience building certain pieces of code I have a better idea of how long certain things will take, writing out how a class might function or using pseudo code is also helpful for me understanding how long somthing might take as it helps me realize what parts will need to be put together in order to get somthing to work. 
 
+ 
 ## Final Submission
 ### Group Devlog
 Put your group Devlog here.
