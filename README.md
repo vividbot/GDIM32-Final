@@ -1,5 +1,5 @@
 # GDIM32-Final
-## Check-In
+## Check-In 1
 ### Group Devlog
 
 We ended up using Gizmos to help with debugging the Physics Object Pick Up. There was a bug where the player just wasn't able to pick any physics object up, even though the code was sound and should have been working correctly. We ended up using a Line Gizmo to draw out the Raycast that was used in the Class, as since the code was sound, it must have been an issue outside of the code. The gizmo revealed that the Ray was incredibly short and simply didn't reach far enough to pick objects up. Without the Gizmo, it would have been significantly harder to diagnose the problem with the Physics Object Pick Up, and the continued trial and error would have been a massive waste of time. 
@@ -20,6 +20,14 @@ The Quest Zone Script was more complicated than the previous two, the script is 
 Finally I did the first pass of greybox blockout in the scene getting our level to a state where we can visualize how we are going to be playing in the scene. 
 
 I think our proposal overall was detailed enough as we were able to get a good start planning out what needed to be done based on that proposal. Additionaly trello has been pretty useful for organizing and planning what we need to do. So when I finish a task I can immdeatly move on to the next thing on our list. 
+
+## Check-In 2
+
+### Group Devlog
+#### Prompt 1
+So far we are fairly far along the way of our planned features, At the momment NPC's, The first two quests, and the Physics system are fully functional. This means we only need to add the remaining quests and then work on implimenting the visual parts of the game. The rest of the prioritization is going to be on finishing the remaining quests, which should not be too hard since the quests are coded in a manner that allow for the us to create them without having to re write much code (Using Inheritance). Once the quests are completley done much of the time is going to be spent on visual polish and any remaining features we feel will make the gameplay feel better, tuning the scripts, etc. Our focus has been on building our scripts and acrchitecture to be scaleable to a degree so that if we need to add more things we dont have to move around a lot of parts of our game (Decoupling our code) The biggest change going forward on how we use our time is definetly spending a bit more time working on the artistic and visual aspects of the game. 
+#### Prompt 2
+
 
 ## Final Submission
 ### Group Devlog
